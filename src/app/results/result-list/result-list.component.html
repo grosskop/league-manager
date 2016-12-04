@@ -1,0 +1,12 @@
+<lm-fixture-search (termChanged)="filterFixtures($event)"></lm-fixture-search>
+
+<table>
+  <tr>
+    <th>Heim</th>
+    <th>Auswärts</th>
+  </tr>
+  <tr *ngFor="let fixture of filteredFixtures">
+    <td>{{fixture.teamA}}</td>
+    <td>{{fixture.teamB}}</td>
+  </tr>
+</table>
