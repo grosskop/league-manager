@@ -1,3 +1,16 @@
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px 15px;
+}
+
 tr.highlighted {
   background-color: darkorange;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: lightgreen;
 }

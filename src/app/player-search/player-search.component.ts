@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'lm-fixture-search',
-  templateUrl: './fixture-search.component.html',
-  styleUrls: ['./fixture-search.component.css']
+  selector: 'lm-player-search',
+  templateUrl: './player-search.component.html',
+  styleUrls: ['./player-search.component.css']
 })
-export class FixtureSearchComponent implements OnInit {
+export class PlayerSearchComponent implements OnInit {
 
   @Output() termChanged = new EventEmitter();
 
@@ -16,6 +16,5 @@ export class FixtureSearchComponent implements OnInit {
 
   valueChange(term) {
     this.termChanged.emit(term);
-    console.log(`key ${term}`);
   }
 }

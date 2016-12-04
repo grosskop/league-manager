@@ -11,7 +11,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let entry of sortedTableEntries; let index = index;" [class.highlighted]="isHighlighted(entry.name)">
+    <tr *ngFor="let entry of sortedTableEntries; let index = index;"
+        [class.highlighted]="isHighlighted(entry.playerName)"
+        (click)="selectPlayer(entry.playerName)">
       <td>{{index+1}}</td>
       <td>{{entry.playerName}}</td>
       <td>{{entry.wins}}</td>

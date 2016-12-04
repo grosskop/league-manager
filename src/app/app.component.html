@@ -2,9 +2,10 @@
   {{title}}
 </h1>
 <div class="left">
-  <lm-result-list></lm-result-list>
+  <lm-player-search (termChanged)="searchTerm = $event"></lm-player-search>
+  <lm-fixture-list [searchTerm]="searchTerm"></lm-fixture-list>
 </div>
 <div class="left">
-  <lm-table></lm-table>
+  <lm-table [searchTerm]="searchTerm" (selectedPlayerChanged)="searchTerm = $event"></lm-table>
 </div>
 <div class="clear"></div>

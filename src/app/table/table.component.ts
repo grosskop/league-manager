@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TableCalculatorService } from '../table-calculator.service';
 import { TableEntry } from '../table-entry';
 
@@ -9,8 +9,10 @@ import { TableEntry } from '../table-entry';
 })
 export class TableComponent implements OnInit {
   private sortedTableEntries: TableEntry[];
+  private selectedPlayer: string;
 
   @Input() searchTerm: string;
+  @Output() selectedPlayerChanged = new EventEmitter();
 
   constructor(private tableCalculator: TableCalculatorService) {
     this.sortedTableEntries = tableCalculator.calculateTable();
@@ -20,7 +22,19 @@ export class TableComponent implements OnInit {
 
   }
 
-  isHighlighted(name: string) {
-    return name.toUpperCase().includes(this.searchTerm.toUpperCase());
+  isHighlighted(playerName: string) {
+    if(!this.searchTerm){
+      return false;
+    }
+    return playerName.toUpperCase().includes(this.searchTerm.toUpperCase());
+  }
+
+  selectPlayer(playerName: string) {
+    if(playerName === this.selectedPlayer) {
+      this.selectedPlayer = null;
+    } else {
+      this.selectedPlayer = playerName;
+    }
+    this.selectedPlayerChanged.emit(this.selectedPlayer);
   }
 }
