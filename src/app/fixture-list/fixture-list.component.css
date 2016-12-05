@@ -4,7 +4,7 @@ table {
 
 td, th {
   text-align: left;
-  padding: 5px 15px;
+  padding: 5px 10px;
 }
 
 td:nth-child(1), th:nth-child(1) {
@@ -12,5 +12,10 @@ td:nth-child(1), th:nth-child(1) {
 }
 
 tr:nth-child(even) {
-  background-color: #ddd;
+  background-color: #eeefee;
+}
+
+input {
+  width: 30px;
+  text-align: center;
 }

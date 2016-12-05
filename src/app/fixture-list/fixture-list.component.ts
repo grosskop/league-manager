@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Fixture } from '../fixture';
 
+import { TableCalculatorService } from '../table-calculator.service';
+import { FixtureGeneratorService } from '../fixture-generator.service';
+
 @Component({
   selector: 'lm-fixture-list',
   templateUrl: './fixture-list.component.html',
@@ -8,21 +11,23 @@ import { Fixture } from '../fixture';
 })
 export class FixtureListComponent implements OnInit {
 
-  fixtures = [
-    new Fixture('Johannes', 'Markus'),
-    new Fixture('Joachim', 'Sebastian'),
-    new Fixture('Arne', 'Reiner'),
-    new Fixture('Kurt', 'Sören'),
-    new Fixture('Patrick', 'Jan'),
-  ];
+  fixtures: Fixture[] = [];
 
   filteredFixtures: Fixture[];
 
-  constructor() {
-    this.filteredFixtures = this.fixtures;
+  constructor(private tableCalculator: TableCalculatorService, private fixtureGenerator: FixtureGeneratorService) {
+    fixtureGenerator.fixturesGenerated$.subscribe(fixtures => {
+      this.fixtures = fixtures;
+      console.log('New fixtures: ' + JSON.stringify(fixtures));
+      this.filteredFixtures = this.fixtures;
+      this.tableCalculator.updateTable(this.fixtures);
+    });
+    console.log('Generating fixtures...');
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.fixtureGenerator.generateFixtures();
+  }
 
   @Input() set searchTerm(searchTerm: string) {
     this.filterFixtures(searchTerm);
@@ -37,5 +42,10 @@ export class FixtureListComponent implements OnInit {
         fix.teamA.toUpperCase().includes(upperTerm)
         || fix.teamB.toUpperCase().includes(upperTerm));
     }
+  }
+
+  onFixtureChange() {
+    console.log('change!');
+    this.tableCalculator.updateTable(this.fixtures);
   }
 }

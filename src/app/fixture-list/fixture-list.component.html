@@ -1,10 +1,18 @@
 <table>
   <tr>
     <th>Heim</th>
+    <th></th>
     <th>Auswärts</th>
+    <th></th>
+    <th></th>
   </tr>
   <tr *ngFor="let fixture of filteredFixtures">
     <td>{{fixture.teamA}}</td>
+    <td>-</td>
     <td>{{fixture.teamB}}</td>
+    <td>
+      <input [(ngModel)]="fixture.goalsA" (ngModelChange)="onFixtureChange()" /> : <input [(ngModel)]="fixture.goalsB" (ngModelChange)="onFixtureChange()"
+      />
+    </td>
   </tr>
 </table>

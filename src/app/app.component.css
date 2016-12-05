@@ -5,3 +5,11 @@
 .clear {
   clear: both;
 }
+
+h1 {
+  background-color: firebrick;
+  color: white;
+  border: none;
+  padding: 25px;
+  margin: 0;
+}

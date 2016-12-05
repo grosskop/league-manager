@@ -7,10 +7,10 @@ th, td {
 }
 
 tr.highlighted {
-  background-color: darkorange;
+  background-color: blanchedalmond;
 }
 
 tbody tr:hover {
   cursor: pointer;
-  background-color: lightgreen;
+  background-color: blanchedalmond;
 }

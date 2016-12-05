@@ -5,15 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FixtureListComponent } from './fixture-list/fixture-list.component';
-import { PlayerSearchComponent } from './player-search/player-search.component';
 import { TableComponent } from './table/table.component';
 import { TableCalculatorService } from './table-calculator.service';
+import { FixtureGeneratorService } from './fixture-generator.service';
+import { FixtureLoaderService } from './fixture-loader.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     FixtureListComponent,
-    PlayerSearchComponent,
     TableComponent
   ],
   imports: [
@@ -21,7 +21,11 @@ import { TableCalculatorService } from './table-calculator.service';
     FormsModule,
     HttpModule
   ],
-  providers: [TableCalculatorService],
+  providers: [
+    TableCalculatorService,
+    FixtureGeneratorService,
+    FixtureLoaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
