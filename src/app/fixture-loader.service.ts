@@ -14,7 +14,7 @@ export class FixtureLoaderService {
   }
 
   loadFixtures() {
-    return this.http.request('/assets/fixtures.json')
+    return this.http.request('assets/fixtures.json')
       .map<Fixture[]>(res => (<Fixture[]>res.json())
       // .map(fix => {
       //   let x = new Fixture(fix.teamA, fix.teamB);
