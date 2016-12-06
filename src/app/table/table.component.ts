@@ -29,7 +29,7 @@ export class TableComponent implements OnInit, OnDestroy {
     if (!this.searchTerm) {
       return false;
     }
-    return playerName === this.searchTerm.toUpperCase();
+    return playerName === this.searchTerm;
   }
 
   selectPlayer(playerName: string) {

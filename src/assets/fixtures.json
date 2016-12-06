@@ -341,7 +341,9 @@
   },
   {
     "teamA": "Dominik",
-    "teamB": "Marcus"
+    "teamB": "Marcus",
+    "goalsA": 0,
+    "goalsB": 0
   },
   {
     "teamA": "Dominik",
