@@ -1023,7 +1023,10 @@
   },
   {
     "teamA": "Timm",
-    "teamB": "Fabian S."
+    "teamB": "Fabian S.",
+    "goalsA": 5,
+    "goalsB": 0,
+    "matchNumber": 12
   },
   {
     "teamA": "Timm",
