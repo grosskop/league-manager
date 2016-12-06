@@ -983,7 +983,10 @@
   },
   {
     "teamA": "Steffen",
-    "teamB": "Andreas R."
+    "teamB": "Andreas R.",
+    "goalsA": 0,
+    "goalsB": 3,
+    "matchNumber": 13
   },
   {
     "teamA": "Steffen",
