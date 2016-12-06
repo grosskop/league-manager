@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Fixture } from '../fixture';
 
 import { TableCalculatorService } from '../table-calculator.service';
-import { FixtureGeneratorService } from '../fixture-generator.service';
+import { FixtureLoaderService } from '../fixture-loader.service';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'lm-fixture-list',
@@ -15,19 +17,14 @@ export class FixtureListComponent implements OnInit {
 
   filteredFixtures: Fixture[];
 
-  constructor(private tableCalculator: TableCalculatorService, private fixtureGenerator: FixtureGeneratorService) {
-    fixtureGenerator.fixturesGenerated$.subscribe(fixtures => {
-      this.fixtures = fixtures;
-      console.log('New fixtures: ' + JSON.stringify(fixtures));
-      this.filteredFixtures = this.fixtures;
+  constructor(private tableCalculator: TableCalculatorService, private fixtureLoader: FixtureLoaderService) {
+    fixtureLoader.loadFixtures().subscribe(fixtures => {
+      this.fixtures = this.filteredFixtures = fixtures;
       this.tableCalculator.updateTable(this.fixtures);
     });
-    console.log('Generating fixtures...');
   }
 
-  ngOnInit() {
-    this.fixtureGenerator.generateFixtures();
-  }
+  ngOnInit() { }
 
   @Input() set searchTerm(searchTerm: string) {
     this.filterFixtures(searchTerm);

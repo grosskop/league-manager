@@ -13,4 +13,8 @@ export class TableEntry {
   public get points() {
     return this.wins * 3 + this.draws;
   }
+
+  public get played() {
+    return this.wins + this.draws + this.losses;
+  }
 }

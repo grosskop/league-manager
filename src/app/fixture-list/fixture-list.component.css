@@ -1,19 +1,10 @@
-table {
-  border-collapse: collapse;
-}
-
 td, th {
-  text-align: left;
-  padding: 5px 10px;
+  white-space: nowrap;
 }
 
-td:nth-child(1), th:nth-child(1) {
-  text-align: right;
-}
-
-tr:nth-child(even) {
-  background-color: #eeefee;
-}
+tr {
+  border: none;
+  }
 
 input {
   width: 30px;

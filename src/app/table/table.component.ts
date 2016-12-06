@@ -26,14 +26,14 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
   isHighlighted(playerName: string) {
-    if(!this.searchTerm){
+    if (!this.searchTerm) {
       return false;
     }
-    return playerName.toUpperCase().includes(this.searchTerm.toUpperCase());
+    return playerName === this.searchTerm.toUpperCase();
   }
 
   selectPlayer(playerName: string) {
-    if(playerName === this.selectedPlayer) {
+    if (playerName === this.selectedPlayer) {
       this.selectedPlayer = null;
     } else {
       this.selectedPlayer = playerName;

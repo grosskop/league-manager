@@ -1,18 +1,22 @@
-<table>
-  <tr>
-    <th>Heim</th>
-    <th></th>
-    <th>Auswärts</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tr *ngFor="let fixture of filteredFixtures">
-    <td>{{fixture.teamA}}</td>
-    <td>-</td>
-    <td>{{fixture.teamB}}</td>
-    <td>
-      <input [(ngModel)]="fixture.goalsA" (ngModelChange)="onFixtureChange()" /> : <input [(ngModel)]="fixture.goalsB" (ngModelChange)="onFixtureChange()"
-      />
-    </td>
-  </tr>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th class="text-right">Heim</th>
+      <th></th>
+      <th>Auswärts</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fixture of filteredFixtures">
+      <td class="text-right">{{fixture.teamA}}</td>
+      <td class="text-center">-</td>
+      <td>{{fixture.teamB}}</td>
+      <td>
+        <input disabled [(ngModel)]="fixture.goalsA" (ngModelChange)="onFixtureChange()" /> : <input disabled [(ngModel)]="fixture.goalsB"
+          (ngModelChange)="onFixtureChange()" />
+      </td>
+    </tr>
+  </tbody>
 </table>

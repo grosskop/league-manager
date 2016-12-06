@@ -13,12 +13,12 @@ export class TableCalculatorService {
   constructor() { }
 
   updateTable(fixtures: Fixture[]) {
-    console.log('update table');
+    console.log('update table, fixtures: ' + JSON.stringify(fixtures));
     let map = new Map<string, TableEntry>();
     for (let fixture of fixtures) {
       this.ensureEntry(map, fixture.teamA);
       this.ensureEntry(map, fixture.teamB);
-      if (!fixture.isComplete) {
+      if (!Fixture.isComplete(fixture)) {
         continue;
       }
       let result: number;

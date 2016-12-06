@@ -3,14 +3,14 @@ export class Fixture {
   public goalsA: number;
   public goalsB: number;
 
-  constructor(public teamA: string, public teamB: string) {
-
+  public static isComplete(fix: Fixture) {
+    return Number.isInteger(fix.goalsA)
+    && Number.isInteger(fix.goalsB)
+    && fix.goalsA > -1
+    && fix.goalsB > -1;
   }
 
-  public isComplete() {
-    return Number.isInteger(this.goalsA)
-    && Number.isInteger(this.goalsB)
-    && this.goalsA > -1
-    && this.goalsB > -1;
+  constructor(public teamA: string, public teamB: string) {
+
   }
 }

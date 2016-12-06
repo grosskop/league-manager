@@ -1,10 +1,11 @@
 <h1>
   {{title}}
 </h1>
-<div class="left">
-  <lm-table [searchTerm]="searchTerm" (selectedPlayerChanged)="searchTerm = $event"></lm-table>
+<div class="row">
+  <div class="standing col-sm-6">
+    <lm-table [searchTerm]="searchTerm" (selectedPlayerChanged)="searchTerm = $event"></lm-table>
+  </div>
+  <div class="fixtures col-sm-6">
+    <lm-fixture-list [searchTerm]="searchTerm"></lm-fixture-list>
+  </div>
 </div>
-<div class="left">
-  <lm-fixture-list [searchTerm]="searchTerm"></lm-fixture-list>
-</div>
-<div class="clear"></div>
