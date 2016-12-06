@@ -20,7 +20,7 @@ export class FixtureListComponent implements OnInit {
   constructor(private tableCalculator: TableCalculatorService, private fixtureLoader: FixtureLoaderService) {
     fixtureLoader.loadFixtures().subscribe(fixtures => {
       this.fixtures = this.filteredFixtures = fixtures;
-      this.filterFixtures(null);
+      this.sortFixtures();
       this.tableCalculator.updateTable(this.fixtures);
     });
   }
@@ -30,6 +30,7 @@ export class FixtureListComponent implements OnInit {
 
   @Input() set searchTerm(searchTerm: string) {
     this.filterFixtures(searchTerm);
+    this.sortFixtures();
   }
 
   filterFixtures(term: string) {
@@ -41,7 +42,16 @@ export class FixtureListComponent implements OnInit {
         fix.teamA.toUpperCase().includes(upperTerm)
         || fix.teamB.toUpperCase().includes(upperTerm));
     }
+  }
+
+  sortFixtures() {
     this.filteredFixtures = this.filteredFixtures.sort((a, b) => {
+      if (a.matchNumber > b.matchNumber) {
+        return -1;
+      }
+      if (b.matchNumber > a.matchNumber) {
+        return 1;
+      }
       if (Fixture.isComplete(a) && !Fixture.isComplete(b)) {
         return -1;
       }

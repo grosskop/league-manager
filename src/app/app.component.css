@@ -16,3 +16,18 @@ h1 {
   width: 100%;
   overflow: hidden;
 }
+
+.tool {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: white;
+  text-align: center;
+}
+
+.tool img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}

@@ -2,6 +2,7 @@ export class Fixture {
 
   public goalsA: number;
   public goalsB: number;
+  public matchNumber: number;
 
   public static isComplete(fix: Fixture) {
     return Number.isInteger(fix.goalsA)
