@@ -340,7 +340,10 @@
   },
   {
     "teamA": "Dominik",
-    "teamB": "Linus"
+    "teamB": "Linus",
+    "goalsA": 0,
+    "goalsB": 1,
+    "matchNumber": 17
   },
   {
     "teamA": "Dominik",
@@ -880,7 +883,10 @@
   },
   {
     "teamA": "Timm",
-    "teamB": "Tjark"
+    "teamB": "Tjark",
+    "goalsA": 4,
+    "goalsB": 1,
+    "matchNumber": 16
   },
   {
     "teamA": "Timm",
