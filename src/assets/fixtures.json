@@ -77,7 +77,10 @@
   },
   {
     "teamA": "Andreas R.",
-    "teamB": "Sebastian"
+    "teamB": "Sebastian",
+    "goalsA": 1,
+    "goalsB": 0,
+    "matchNumber": 15
   },
   {
     "teamA": "Andreas R.",
@@ -101,7 +104,10 @@
   },
   {
     "teamA": "Andreas R.",
-    "teamB": "Fabian S."
+    "teamB": "Fabian S.",
+    "goalsA": 4,
+    "goalsB": 0,
+    "matchNumber": 14
   },
   {
     "teamA": "Andreas R.",

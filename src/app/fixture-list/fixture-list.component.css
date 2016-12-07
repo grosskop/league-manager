@@ -10,3 +10,7 @@ input {
   width: 30px;
   text-align: center;
 }
+
+input:disabled {
+  color: rgb(51, 51, 51);
+}
