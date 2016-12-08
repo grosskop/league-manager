@@ -191,7 +191,10 @@
   },
   {
     "teamA": "Christian P.",
-    "teamB": "Timm"
+    "teamB": "Timm",
+    "goalsA": 0,
+    "goalsB": 4,
+    "matchNumber": 22
   },
   {
     "teamA": "Christian P.",
@@ -945,7 +948,10 @@
   },
   {
     "teamA": "Timm",
-    "teamB": "Christian P."
+    "teamB": "Christian P.",
+    "goalsA": 3,
+    "goalsB": 0,
+    "matchNumber": 23
   },
   {
     "teamA": "Timm",
