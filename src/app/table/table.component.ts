@@ -26,7 +26,6 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
   isHighlighted(playerName: string) {
-    console.log(playerName + " " + this.searchTerm + " = " + (playerName === this.searchTerm));
     return playerName === this.searchTerm;
   }
 
