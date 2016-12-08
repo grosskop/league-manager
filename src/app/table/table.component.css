@@ -2,12 +2,12 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
-  text-align: left;
+th:not(.text-left):not(.text-right), td:not(.text-left):not(.text-right) {
+  text-align: center;
 }
 
 tr.highlighted {
-  background-color: blanchedalmond;
+  background-color: blanchedalmond !important;
 }
 
 tbody tr:hover {

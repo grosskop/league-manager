@@ -20,7 +20,7 @@ export class FixtureGeneratorService {
 
   generateFixtures() {
     this.loadPlayers().subscribe(players => {
-      console.log("loaded players: " + players);
+      console.log('loaded players: ' + players);
       let sortedNames = players.sort();
       let newFixtures: Fixture[] = [];
       for (let name1 of sortedNames) {

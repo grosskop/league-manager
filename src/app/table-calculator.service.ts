@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { TableEntry } from './table-entry';
 import { Fixture } from './fixture';
 import { Subject } from 'rxjs';
+import { FixtureLoaderService } from './fixture-loader.service';
 
 @Injectable()
 export class TableCalculatorService {
@@ -10,7 +11,9 @@ export class TableCalculatorService {
 
   entriesUpdated$ = this.entriesUpdatedSource.asObservable();
 
-  constructor() { }
+  constructor(private fixtureLoader: FixtureLoaderService) {
+    this.fixtureLoader.loadFixtures().subscribe(fixtures => this.updateTable(fixtures));
+  }
 
   updateTable(fixtures: Fixture[]) {
     console.log('update table, fixtures: ' + JSON.stringify(fixtures));
