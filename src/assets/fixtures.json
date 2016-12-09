@@ -139,7 +139,10 @@
   },
   {
     "teamA": "Bernd",
-    "teamB": "Sebastian"
+    "teamB": "Sebastian",
+    "goalsA": 2,
+    "goalsB": 0,
+    "matchNumber": 26
   },
   {
     "teamA": "Bernd",
@@ -712,7 +715,10 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Sebastian"
+    "teamB": "Sebastian",
+    "goalsA": 4,
+    "goalsB": 0,
+    "matchNumber": 27
   },
   {
     "teamA": "Marcus",
@@ -920,7 +926,10 @@
   },
   {
     "teamA": "Timm",
-    "teamB": "Marcello"
+    "teamB": "Marcello",
+    "goalsA": 3,
+    "goalsB": 0,
+    "matchNumber": 25
   },
   {
     "teamA": "Timm",
