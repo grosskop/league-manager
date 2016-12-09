@@ -365,7 +365,10 @@
   },
   {
     "teamA": "Dominik",
-    "teamB": "Felix"
+    "teamB": "Felix",
+    "goalsA": 3,
+    "goalsB": 0,
+    "matchNumber": 33
   },
   {
     "teamA": "Dominik",
