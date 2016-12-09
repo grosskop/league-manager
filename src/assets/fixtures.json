@@ -673,7 +673,10 @@
   },
   {
     "teamA": "Marcello",
-    "teamB": "Felix"
+    "teamB": "Felix",
+    "goalsA": 0,
+    "goalsB": 0,
+    "matchNumber": 30
   },
   {
     "teamA": "Marcello",
