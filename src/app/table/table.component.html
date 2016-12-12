@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th class="text-right">#</th>
-      <th class="text-left">Player</th>
+      <th class="text-left long">Player</th>
       <th class="hidden-xs">Matches</th>
       <th class="hidden-lg hidden-md hidden-sm">M</th>
       <th class="hidden-xs">Wins</th>
@@ -13,8 +13,9 @@
       <th class="hidden-xs">Losses</th>
       <th class="hidden-lg hidden-md hidden-sm">L</th>
       <th class="hidden-md hidden-sm hidden-xs" title="Goal Scored">Scored</th>
-      <th class="hidden-md hidden-sm hidden-xs" title="Goal Conceived">Conceived</th>
+      <th class="hidden-md hidden-sm hidden-xs" title="Goal Conceded">Conceded</th>
       <th class="hidden-sm hidden-xs" title="Goal Difference">GD</th>
+      <th class="hidden-md hidden-sm hidden-xs" title="Points per Match">PPM</th>
       <th class="hidden-xs">Points</th>
       <th class="hidden-lg hidden-md hidden-sm">P</th>
     </tr>
@@ -32,6 +33,7 @@
       <td class="hidden-md hidden-sm hidden-xs">{{entry.goalsScored}}</td>
       <td class="hidden-md hidden-sm hidden-xs">{{entry.goalsConceived}}</td>
       <td class="hidden-sm hidden-xs">{{entry.goalDifference}}</td>
+      <td class="hidden-md hidden-sm hidden-xs">{{entry.pointsPerMatch}}</td>
       <td>{{entry.points}}</td>
     </tr>
   </tbody>

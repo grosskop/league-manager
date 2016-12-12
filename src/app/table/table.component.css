@@ -1,9 +1,19 @@
 table {
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 th:not(.text-left):not(.text-right), td:not(.text-left):not(.text-right) {
   text-align: center;
+  width: 9%;
+}
+
+th:nth-child(1) {
+  width: 4%;
+}
+
+th:nth-child(2) {
+  width: 20%;
 }
 
 tr.highlighted {
