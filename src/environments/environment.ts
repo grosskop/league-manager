@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  baseUrl: '/'
+  baseUrl: '/',
+  fixturesUrl: 'assets/fixtures.json'
 };

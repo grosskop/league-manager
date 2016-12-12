@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Fixture } from './fixture';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class FixtureLoaderService {
@@ -21,7 +22,7 @@ export class FixtureLoaderService {
       return this.observable;
     } else {
       // create the request, store the `Observable` for subsequent subscribers
-      this.observable = this.http.request('assets/fixtures.json')
+      this.observable = this.http.request(environment.fixturesUrl)
         .map(response => {
           // when the cached data is available we don't need the `Observable` reference anymore
           this.observable = null;

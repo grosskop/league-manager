@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: '/league-manager/'
+  baseUrl: '/league-manager/',
+  fixturesUrl: 'assets/fixtures.json'
 };
