@@ -1,5 +1,3 @@
-export class AdminConsoleApp {
-  public hello() {
-    console.log('hello');
-  }
-}
+import { AdminConsoleApp } from './AdminConsoleApp';
+
+new AdminConsoleApp().run();
