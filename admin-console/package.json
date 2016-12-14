@@ -1,0 +1,19 @@
+{
+  "name": "admin-console",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/admin-console/main.js"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "typescript": "2.1.4",
+    "@types/node": "6.0.52"
+  },
+  "author": "",
+  "license": "ISC"
+}
