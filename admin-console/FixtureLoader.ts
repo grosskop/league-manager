@@ -16,4 +16,12 @@ export class FixtureLoader {
     let previousMax: number = Math.max.apply(null, matchNumbers);
     return ++previousMax;
   }
+
+  private onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
+  public getPlayersList() {
+    return this.fixtures.map(fix => fix.teamA).filter(this.onlyUnique);
+  }
 }
