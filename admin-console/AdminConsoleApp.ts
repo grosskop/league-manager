@@ -18,7 +18,7 @@ export class AdminConsoleApp {
       if (line === 'exit') {
         rl.close();
       }
-      let values = line.split(' ');
+      let values = line.split(',');
       editor.finalizeMatch(values[0], values[1], Number.parseInt(values[2]), Number.parseInt(values[3]));
       editor.save();
       rl.prompt();

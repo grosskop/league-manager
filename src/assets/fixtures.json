@@ -372,11 +372,17 @@
   },
   {
     "teamA": "Dominik",
-    "teamB": "Fabian S."
+    "teamB": "Fabian S.",
+    "goalsA": 5,
+    "goalsB": 0,
+    "matchNumber": 45
   },
   {
     "teamA": "Dominik",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 2,
+    "goalsB": 0,
+    "matchNumber": 46
   },
   {
     "teamA": "Dominik",
