@@ -5,7 +5,8 @@
   "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/admin-console/main.js"
+    "start": "tsc && node dist/admin-console/main.js",
+    "deploy": "git commit -am \"results\" && git push && cd .. && ng github-pages:deploy"
   },
   "dependencies": {
 
