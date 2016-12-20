@@ -191,7 +191,10 @@
   },
   {
     "teamA": "Bernd",
-    "teamB": "Andreas R."
+    "teamB": "Andreas R.",
+    "goalsA": 1,
+    "goalsB": 1,
+    "matchNumber": 65
   },
   {
     "teamA": "Bernd",
@@ -1135,11 +1138,17 @@
   },
   {
     "teamA": "Tjark",
-    "teamB": "Bernd"
+    "teamB": "Bernd",
+    "goalsA": 1,
+    "goalsB": 0,
+    "matchNumber": 64
   },
   {
     "teamA": "Tjark",
-    "teamB": "Andreas R."
+    "teamB": "Andreas R.",
+    "goalsA": 2,
+    "goalsB": 0,
+    "matchNumber": 63
   },
   {
     "teamA": "Tjark",
