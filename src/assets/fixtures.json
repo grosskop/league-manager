@@ -56,7 +56,10 @@
   },
   {
     "teamA": "Andrea",
-    "teamB": "Bernd"
+    "teamB": "Bernd",
+    "goalsA": 0,
+    "goalsB": 4,
+    "matchNumber": 69
   },
   {
     "teamA": "Andrea",
