@@ -24,7 +24,10 @@
   },
   {
     "teamA": "Andrea",
-    "teamB": "Marcello"
+    "teamB": "Marcello",
+    "goalsA": 0,
+    "goalsB": 1,
+    "matchNumber": 85
   },
   {
     "teamA": "Andrea",
@@ -456,7 +459,10 @@
   },
   {
     "teamA": "Erkan",
-    "teamB": "Marcello"
+    "teamB": "Marcello",
+    "goalsA": 0,
+    "goalsB": 1,
+    "matchNumber": 83
   },
   {
     "teamA": "Erkan",
@@ -468,7 +474,10 @@
   },
   {
     "teamA": "Erkan",
-    "teamB": "Fabian S."
+    "teamB": "Fabian S.",
+    "goalsA": 0,
+    "goalsB": 0,
+    "matchNumber": 77
   },
   {
     "teamA": "Erkan",
@@ -512,7 +521,10 @@
   },
   {
     "teamA": "Fabian S.",
-    "teamB": "Marcus"
+    "teamB": "Marcus",
+    "goalsA": 0,
+    "goalsB": 5,
+    "matchNumber": 80
   },
   {
     "teamA": "Fabian S.",
@@ -746,11 +758,17 @@
   },
   {
     "teamA": "Marcello",
-    "teamB": "Fabian S."
+    "teamB": "Fabian S.",
+    "goalsA": 1,
+    "goalsB": 1,
+    "matchNumber": 79
   },
   {
     "teamA": "Marcello",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 1,
+    "goalsB": 0,
+    "matchNumber": 78
   },
   {
     "teamA": "Marcello",
@@ -803,7 +821,10 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Marcello"
+    "teamB": "Marcello",
+    "goalsA": 1,
+    "goalsB": 0,
+    "matchNumber": 84
   },
   {
     "teamA": "Marcus",
@@ -828,7 +849,10 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 3,
+    "goalsB": 0,
+    "matchNumber": 75
   },
   {
     "teamA": "Marcus",
@@ -852,7 +876,10 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Andrea"
+    "teamB": "Andrea",
+    "goalsA": 7,
+    "goalsB": 0,
+    "matchNumber": 76
   },
   {
     "teamA": "Sebastian",
@@ -1145,11 +1172,17 @@
   },
   {
     "teamA": "Tjark",
-    "teamB": "Fabian S."
+    "teamB": "Fabian S.",
+    "goalsA": 1,
+    "goalsB": 1,
+    "matchNumber": 82
   },
   {
     "teamA": "Tjark",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 3,
+    "goalsB": 1,
+    "matchNumber": 81
   },
   {
     "teamA": "Tjark",
