@@ -407,7 +407,10 @@
   },
   {
     "teamA": "Dominik",
-    "teamB": "David"
+    "teamB": "David",
+    "goalsA": 1,
+    "goalsB": 1,
+    "matchNumber": 95
   },
   {
     "teamA": "Dominik",
@@ -588,7 +591,10 @@
   },
   {
     "teamA": "Felix",
-    "teamB": "Steffen"
+    "teamB": "Steffen",
+    "goalsA": 4,
+    "goalsB": 1,
+    "matchNumber": 99
   },
   {
     "teamA": "Felix",
@@ -655,7 +661,10 @@
   },
   {
     "teamA": "Linus",
-    "teamB": "Tjark"
+    "teamB": "Tjark",
+    "goalsA": 2,
+    "goalsB": 1,
+    "matchNumber": 92
   },
   {
     "teamA": "Linus",
@@ -812,7 +821,10 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Timm"
+    "teamB": "Timm",
+    "goalsA": 2,
+    "goalsB": 1,
+    "matchNumber": 97
   },
   {
     "teamA": "Marcus",
@@ -869,7 +881,10 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "David"
+    "teamB": "David",
+    "goalsA": 4,
+    "goalsB": 2,
+    "matchNumber": 98
   },
   {
     "teamA": "Marcus",
@@ -939,7 +954,10 @@
   },
   {
     "teamA": "Sebastian",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 0,
+    "goalsB": 0,
+    "matchNumber": 96
   },
   {
     "teamA": "Sebastian",
@@ -1011,7 +1029,10 @@
   },
   {
     "teamA": "Steffen",
-    "teamB": "Linus"
+    "teamB": "Linus",
+    "goalsA": 0,
+    "goalsB": 2,
+    "matchNumber": 93
   },
   {
     "teamA": "Steffen",
@@ -1019,7 +1040,10 @@
   },
   {
     "teamA": "Steffen",
-    "teamB": "Fabian S."
+    "teamB": "Fabian S.",
+    "goalsA": 0,
+    "goalsB": 1,
+    "matchNumber": 94
   },
   {
     "teamA": "Steffen",
@@ -1056,7 +1080,10 @@
   },
   {
     "teamA": "Steffen",
-    "teamB": "Andrea"
+    "teamB": "Andrea",
+    "goalsA": 2,
+    "goalsB": 1,
+    "matchNumber": 100
   },
   {
     "teamA": "Timm",
