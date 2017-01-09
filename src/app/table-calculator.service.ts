@@ -16,7 +16,7 @@ export class TableCalculatorService {
   }
 
   updateTable(fixtures: Fixture[]) {
-    console.log('update table, fixtures: ' + JSON.stringify(fixtures));
+    //console.log('update table, fixtures: ' + JSON.stringify(fixtures));
     let map = new Map<string, TableEntry>();
     for (let fixture of fixtures) {
       this.ensureEntry(map, fixture.teamA);

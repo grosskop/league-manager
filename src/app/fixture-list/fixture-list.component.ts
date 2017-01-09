@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Fixture } from '../fixture';
+import {Component, OnInit, Input} from '@angular/core';
+import {Fixture} from '../fixture';
 
-import { TableCalculatorService } from '../table-calculator.service';
-import { FixtureLoaderService } from '../fixture-loader.service';
+import {TableCalculatorService} from '../table-calculator.service';
+import {FixtureLoaderService} from '../fixture-loader.service';
+import {FixtureResult} from '../fixture-result';
 
 @Component({
   selector: 'lm-fixture-list',
@@ -50,6 +51,14 @@ export class FixtureListComponent implements OnInit {
       }
       return 0;
     });
+  }
+
+  public isWin(fixture: Fixture) {
+    if(!this.searchTerm || !Fixture.isComplete(fixture))
+      return false;
+    let result = Fixture.getResult(fixture, this.searchTerm);
+    console.log(result);
+    return result === FixtureResult.Win;
   }
 
   onFixtureChange() {

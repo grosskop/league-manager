@@ -5,8 +5,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let fixture of filteredFixtures" title="Match {{ fixture.matchNumber }}">
-      <td class="text-right">{{fixture.teamA}}</td>
+    <tr *ngFor="let fixture of filteredFixtures"
+        title="Match {{ fixture.matchNumber }}">
+      <td
+        [class.win]="isWin(fixture)" class="text-right">{{fixture.teamA}}</td>
       <td class="text-center">-</td>
       <td>{{fixture.teamB}}</td>
       <td>

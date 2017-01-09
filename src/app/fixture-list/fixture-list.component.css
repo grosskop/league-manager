@@ -14,3 +14,7 @@ input {
 input:read-only {
   border: 1px solid #CCC;
 }
+
+win {
+  color: greenyellow;
+}
