@@ -464,7 +464,10 @@
   },
   {
     "teamA": "Erkan",
-    "teamB": "Marcus"
+    "teamB": "Marcus",
+    "goalsA": 1,
+    "goalsB": 2,
+    "matchNumber": 111
   },
   {
     "teamA": "Erkan",
