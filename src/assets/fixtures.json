@@ -320,7 +320,10 @@
   },
   {
     "teamA": "David",
-    "teamB": "Dominik"
+    "teamB": "Dominik",
+    "goalsA": 1,
+    "goalsB": 1,
+    "matchNumber": 114
   },
   {
     "teamA": "David",
