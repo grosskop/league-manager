@@ -20,7 +20,10 @@
   },
   {
     "teamA": "Andrea",
-    "teamB": "Marcus"
+    "teamB": "Marcus",
+    "goalsA": 0,
+    "goalsB": 4,
+    "matchNumber": 115
   },
   {
     "teamA": "Andrea",
@@ -1086,7 +1089,10 @@
   },
   {
     "teamA": "Steffen",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 2,
+    "goalsB": 3,
+    "matchNumber": 116
   },
   {
     "teamA": "Steffen",
