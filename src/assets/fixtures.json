@@ -551,7 +551,10 @@
   },
   {
     "teamA": "Fabian S.",
-    "teamB": "Timm"
+    "teamB": "Timm",
+    "goalsA": 0,
+    "goalsB": 5,
+    "matchNumber": 134
   },
   {
     "teamA": "Fabian S.",
