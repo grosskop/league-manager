@@ -107,7 +107,10 @@
   },
   {
     "teamA": "Andreas R.",
-    "teamB": "Felix"
+    "teamB": "Felix",
+    "goalsA": 0,
+    "goalsB": 2,
+    "matchNumber": 131
   },
   {
     "teamA": "Andreas R.",
