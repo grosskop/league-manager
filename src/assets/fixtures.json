@@ -1192,7 +1192,10 @@
   },
   {
     "teamA": "Timm",
-    "teamB": "Marcus"
+    "teamB": "Marcus",
+    "goalsA": 2,
+    "goalsB": 0,
+    "matchNumber": 135
   },
   {
     "teamA": "Timm",
