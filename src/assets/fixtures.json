@@ -121,7 +121,10 @@
   },
   {
     "teamA": "Andreas R.",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 1,
+    "goalsB": 0,
+    "matchNumber": 132
   },
   {
     "teamA": "Andreas R.",
@@ -514,7 +517,10 @@
   },
   {
     "teamA": "Erkan",
-    "teamB": "Dominik"
+    "teamB": "Dominik",
+    "goalsA": 0,
+    "goalsB": 3,
+    "matchNumber": 133
   },
   {
     "teamA": "Erkan",
