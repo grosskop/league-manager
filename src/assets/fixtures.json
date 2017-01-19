@@ -242,11 +242,17 @@
   },
   {
     "teamA": "Christian P.",
-    "teamB": "Marcus"
+    "teamB": "Marcus",
+    "goalsA": 0,
+    "goalsB": 0,
+    "matchNumber": 136
   },
   {
     "teamA": "Christian P.",
-    "teamB": "Marcello"
+    "teamB": "Marcello",
+    "goalsA": 1,
+    "goalsB": 1,
+    "matchNumber": 137
   },
   {
     "teamA": "Christian P.",
@@ -266,7 +272,10 @@
   },
   {
     "teamA": "Christian P.",
-    "teamB": "Dominik"
+    "teamB": "Dominik",
+    "goalsA": 0,
+    "goalsB": 1,
+    "matchNumber": 138
   },
   {
     "teamA": "Christian P.",
