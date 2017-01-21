@@ -12,6 +12,8 @@ import {FixtureResult} from '../fixture-result';
 })
 export class FixtureListComponent implements OnInit {
 
+  private _searchTerm: string;
+
   fixtures: Fixture[] = [];
 
   filteredFixtures: Fixture[];
@@ -28,6 +30,7 @@ export class FixtureListComponent implements OnInit {
   }
 
   @Input() set searchTerm(searchTerm: string) {
+    this._searchTerm = searchTerm;
     this.filterFixtures(searchTerm);
     this.sortFixtures();
   }
@@ -53,12 +56,12 @@ export class FixtureListComponent implements OnInit {
     });
   }
 
-  public isWin(fixture: Fixture) {
-    if(!this.searchTerm || !Fixture.isComplete(fixture))
+  public isResult(fixture, result: string) {
+    if (!this._searchTerm || !Fixture.isComplete(fixture)) {
       return false;
-    let result = Fixture.getResult(fixture, this.searchTerm);
-    console.log(result);
-    return result === FixtureResult.Win;
+    }
+    let actualResult = Fixture.getResult(fixture, this._searchTerm);
+    return actualResult === FixtureResult[result];
   }
 
   onFixtureChange() {

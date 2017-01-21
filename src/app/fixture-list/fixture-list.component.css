@@ -15,6 +15,14 @@ input:read-only {
   border: 1px solid #CCC;
 }
 
-win {
-  color: greenyellow;
+.win i {
+  color: green;
+}
+
+.draw i {
+  color: #FF6F00;
+}
+
+.loss i {
+  color: #d50000;
 }
