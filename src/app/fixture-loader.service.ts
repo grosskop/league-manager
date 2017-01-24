@@ -1,38 +1,32 @@
+import { ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Fixture } from './fixture';
-import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
 @Injectable()
-export class FixtureLoaderService {
+export class FixtureService {
 
-  private fixtures: Fixture[];
-  private observable: Observable<Fixture[]>;
+  public fixtures$ = new ReplaySubject<Fixture[]>(1);
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+  }
 
-  loadFixtures() {
-    if (this.fixtures) {
-      // if `data` is available just return it as `Observable`
-      return Observable.of(this.fixtures);
-    } else if (this.observable) {
-      // if `this.observable` is set then the request is in progress
-      // return the `Observable` for the ongoing request
-      return this.observable;
-    } else {
-      // create the request, store the `Observable` for subsequent subscribers
-      this.observable = this.http.request(environment.fixturesUrl)
-        .map(response => {
-          // when the cached data is available we don't need the `Observable` reference anymore
-          this.observable = null;
+  init() {
+    this.loadFixtures()
+      .subscribe(
+      fixtures => this.fixtures$.next(fixtures),
+      err => console.error(err)
+      );
+  }
 
-          this.fixtures = response.json();
-          return this.fixtures;
-        })
-        // make it shared so more than one subscriber can get the result
-        .share();
-      return this.observable;
-    }
+  public updateFixtures(fixtures: Fixture[]) {
+    this.fixtures$.next(fixtures);
+  }
+
+  private loadFixtures() {
+    // create the request, store the `Observable` for subsequent subscribers
+    return this.http.request(environment.fixturesUrl)
+      .map(response => response.json());
   }
 }

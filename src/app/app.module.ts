@@ -8,7 +8,7 @@ import { FixtureListComponent } from './fixture-list/fixture-list.component';
 import { TableComponent } from './table/table.component';
 import { TableCalculatorService } from './table-calculator.service';
 import { FixtureGeneratorService } from './fixture-generator.service';
-import { FixtureLoaderService } from './fixture-loader.service';
+import { FixtureService } from './fixture-loader.service';
 import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.component';
 
 @NgModule({
@@ -26,10 +26,10 @@ import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.co
   providers: [
     TableCalculatorService,
     FixtureGeneratorService,
-    FixtureLoaderService,
+    FixtureService,
     {
       provide: APP_INITIALIZER,
-      useFactory: (config: FixtureLoaderService) => () => config.loadFixtures(), deps: [FixtureLoaderService], multi: true
+      useFactory: (fixtureService: FixtureService) => () => fixtureService.init(), deps: [FixtureService], multi: true
     }
   ],
   bootstrap: [AppComponent]

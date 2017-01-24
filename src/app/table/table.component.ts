@@ -11,14 +11,21 @@ import { Subscription } from 'rxjs';
 export class TableComponent implements OnInit, OnDestroy {
   private sortedTableEntries: TableEntry[];
   private selectedPlayer: string;
+  private sortCriteria: string;
+  private sortAscending: boolean = true;
   private subscription: Subscription;
 
   @Input() searchTerm: string;
   @Output() selectedPlayerChanged = new EventEmitter();
 
   constructor(private tableCalculator: TableCalculatorService) {
-    this.subscription = tableCalculator.entriesUpdated$.subscribe(
-      entries => this.sortedTableEntries = entries);
+    this.subscription = tableCalculator.getTable().subscribe(
+      entries => {
+        this.sortedTableEntries = entries;
+        console.log('new table: ' + JSON.stringify(entries));
+      },
+      err => console.error(err)
+    );
   }
 
   ngOnInit() {
@@ -36,6 +43,23 @@ export class TableComponent implements OnInit, OnDestroy {
       this.selectedPlayer = playerName;
     }
     this.selectedPlayerChanged.emit(this.selectedPlayer);
+  }
+
+  sortBy(criteria: string) {
+    if (criteria === null) {
+      this.sortAscending = true;
+    }
+    if (criteria === this.sortCriteria) {
+      if (this.sortAscending === false) {
+        this.sortAscending = true;
+      } else {
+        this.sortCriteria = null;
+      }
+    } else {
+      this.sortCriteria = criteria;
+      this.sortAscending = false;
+    }
+    this.tableCalculator.sortBy(this.sortCriteria, this.sortAscending);
   }
 
   ngOnDestroy() {

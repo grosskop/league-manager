@@ -1,13 +1,14 @@
 export class TableEntry {
-  constructor(public playerName: string,
+  constructor(
+    public playerName: string,
     public wins: number,
     public draws: number,
     public losses: number,
     public goalsScored: number,
-    public goalsConceived: number) { }
+    public goalsConceded: number) { }
 
   public get goalDifference() {
-    return this.goalsScored - this.goalsConceived;
+    return this.goalsScored - this.goalsConceded;
   }
 
   public get points() {

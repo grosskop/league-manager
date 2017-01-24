@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Fixture } from '../fixture';
 
 import { TableCalculatorService } from '../table-calculator.service';
-import { FixtureLoaderService } from '../fixture-loader.service';
+import { FixtureService } from '../fixture-loader.service';
 
 @Component({
   selector: 'lm-upcoming-matches',
@@ -15,8 +15,8 @@ export class UpcomingMatchesComponent implements OnInit {
 
   filteredFixtures: Fixture[];
 
-  constructor(private tableCalculator: TableCalculatorService, private fixtureLoader: FixtureLoaderService) {
-    this.fixtureLoader.loadFixtures().subscribe(fixtures => {
+  constructor(private tableCalculator: TableCalculatorService, private fixtureLoader: FixtureService) {
+    this.fixtureLoader.fixtures$.subscribe(fixtures => {
       this.fixtures = this.filteredFixtures = fixtures;
       this.filterFixtures(null);
     });
@@ -39,6 +39,6 @@ export class UpcomingMatchesComponent implements OnInit {
   }
 
   onFixtureChange() {
-    this.tableCalculator.updateTable(this.fixtures);
+    this.fixtureLoader.updateFixtures(this.fixtures);
   }
 }

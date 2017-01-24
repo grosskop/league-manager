@@ -6,6 +6,7 @@ table {
 th:not(.text-left):not(.text-right), td:not(.text-left):not(.text-right) {
   text-align: center;
   width: 9%;
+  white-space: nowrap;
 }
 
 th:nth-child(1) {
@@ -14,6 +15,34 @@ th:nth-child(1) {
 
 th:nth-child(2) {
   width: 20%;
+}
+
+th:hover {
+  cursor: pointer;
+}
+
+th:not(.text-right):hover::after {
+  font-family: "FontAwesome";
+  position: absolute;
+  padding-left: 5px;
+}
+
+th:not(.text-right):not(.selected):hover::after {
+  content: '\f107';
+}
+
+th.selected::after {
+  font-family: "FontAwesome";
+  position: absolute;
+  padding-left: 5px;
+}
+
+tr:not(.asc) th.selected::after {
+  content: '\f107';
+}
+
+tr.asc th.selected::after {
+  content: '\f106';
 }
 
 tr.highlighted {

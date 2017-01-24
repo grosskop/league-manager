@@ -1,22 +1,25 @@
+import { BehaviorSubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { TableEntry } from './table-entry';
 import { Fixture } from './fixture';
-import { Subject } from 'rxjs';
-import { FixtureLoaderService } from './fixture-loader.service';
+import { FixtureService } from './fixture-loader.service';
+import * as _ from 'lodash';
 
 @Injectable()
 export class TableCalculatorService {
 
-  private entriesUpdatedSource = new Subject<TableEntry[]>();
+  private sortOptions$ = new BehaviorSubject<SortOptions>(null);
 
-  entriesUpdated$ = this.entriesUpdatedSource.asObservable();
-
-  constructor(private fixtureLoader: FixtureLoaderService) {
-    this.fixtureLoader.loadFixtures().subscribe(fixtures => this.updateTable(fixtures));
+  constructor(private fixtureLoader: FixtureService) {
   }
 
-  updateTable(fixtures: Fixture[]) {
-    //console.log('update table, fixtures: ' + JSON.stringify(fixtures));
+  public getTable() {
+    return this.fixtureLoader.fixtures$
+      .map(fixtures => this.calculateTable(fixtures))
+      .combineLatest(this.sortOptions$, (tableUnsorted, sortOptions) => this.sortTable(tableUnsorted, sortOptions));
+  }
+
+  private calculateTable(fixtures: Fixture[]) {
     let map = new Map<string, TableEntry>();
     for (let fixture of fixtures) {
       this.ensureEntry(map, fixture.teamA);
@@ -39,7 +42,7 @@ export class TableCalculatorService {
         (result === 0 ? oldEntryA.draws + 1 : oldEntryA.draws),
         (result < 0 ? oldEntryA.losses + 1 : oldEntryA.losses),
         +oldEntryA.goalsScored + +fixture.goalsA,
-        +oldEntryA.goalsConceived + +fixture.goalsB));
+        +oldEntryA.goalsConceded + +fixture.goalsB));
 
       let oldEntryB = map.get(fixture.teamB);
       map.set(fixture.teamB, new TableEntry(
@@ -48,11 +51,16 @@ export class TableCalculatorService {
         (result === 0 ? oldEntryB.draws + 1 : oldEntryB.draws),
         (result > 0 ? oldEntryB.losses + 1 : oldEntryB.losses),
         +oldEntryB.goalsScored + +fixture.goalsB,
-        +oldEntryB.goalsConceived + +fixture.goalsA));
+        +oldEntryB.goalsConceded + +fixture.goalsA));
     }
-    let entries = Array.from(map.values());
-    let entriesSorted = entries.sort(this.sortTable);
-    this.entriesUpdatedSource.next(entriesSorted);
+    return Array.from(map.values());
+  }
+
+  private sortTable(table: TableEntry[], sortOptions: SortOptions) {
+    if (sortOptions == null || sortOptions.criteria == null) {
+      return _.orderBy(table, ['points', 'goalDifference', 'goalsScored', 'playerName'], ['desc', 'desc', 'desc', 'asc']);
+    }
+    return _.orderBy(table, [sortOptions.criteria], [sortOptions.ascending ? 'asc' : 'desc']);
   }
 
   private ensureEntry(entries: Map<string, TableEntry>, player: string) {
@@ -61,23 +69,13 @@ export class TableCalculatorService {
     }
   }
 
-  private sortTable(a, b) {
-    let diffPoints = b.points - a.points;
-    if (diffPoints !== 0) {
-      return diffPoints;
-    }
-    let diffGoalDiffs = b.goalDifference - a.goalDifference;
-    if (diffGoalDiffs !== 0) {
-      return diffGoalDiffs;
-    }
-    let diffScored = b.goalsScored - a.goalsScored;
-    if (diffScored !== 0) {
-      return diffScored;
-    }
-    if (a.playerName > b.playerName) {
-      return 1;
-    }
-    return -1;
+  public sortBy(criteria: string, ascending: boolean) {
+    let sortOptions = { criteria: criteria, ascending: ascending };
+    this.sortOptions$.next(sortOptions);
   }
 }
 
+class SortOptions {
+  criteria: string;
+  ascending: boolean;
+}
