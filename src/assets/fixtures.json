@@ -184,7 +184,8 @@
     "teamB": "Linus",
     "goalsA": 0,
     "goalsB": 2,
-    "matchNumber": 145
+    "matchNumber": 145,
+    "dateEntered": "2017-01-24T14:20:00.000Z"
   },
   {
     "teamA": "Bernd",
@@ -799,7 +800,8 @@
     "teamB": "Bernd",
     "goalsA": 3,
     "goalsB": 1,
-    "matchNumber": 144
+    "matchNumber": 144,
+    "dateEntered": "2017-01-24T14:21:00.000Z"
   },
   {
     "teamA": "Linus",
