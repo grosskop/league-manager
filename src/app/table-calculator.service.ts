@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 @Injectable()
 export class TableCalculatorService {
 
-  private sortOptions$ = new BehaviorSubject<SortOptions>(null);
+  private sortOptions$ = new BehaviorSubject<SortOptions>({ criteria: 'points', ascending: false });
 
   constructor(private fixtureLoader: FixtureService) {
   }
@@ -72,10 +72,9 @@ export class TableCalculatorService {
   }
 
   private sortTable(table: TableEntry[], sortOptions: SortOptions) {
-    if (sortOptions == null || sortOptions.criteria == null) {
-      return _.orderBy(table, ['points', 'goalDifference', 'goalsScored', 'playerName'], ['desc', 'desc', 'desc', 'asc']);
-    }
-    return _.orderBy(table, [sortOptions.criteria], [sortOptions.ascending ? 'asc' : 'desc']);
+    let order = sortOptions.ascending ? 'asc' : 'desc';
+    let altOrder = order === 'asc' ? 'desc' : 'asc';
+    return _.orderBy(table, [sortOptions.criteria, 'goalDifference', 'goalsScored', 'playerName'], [order, order, order, altOrder]);
   }
 
   private ensureEntry(entries: Map<string, TableEntry>, player: string) {

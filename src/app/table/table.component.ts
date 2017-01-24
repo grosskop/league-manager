@@ -24,7 +24,7 @@ export class TableComponent implements OnInit, OnDestroy {
         this.sortedTableEntries = entries;
       },
       err => console.error(err)
-      );
+    );
   }
 
   ngOnInit() {
@@ -45,19 +45,14 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
   sortBy(criteria: string) {
-    if (criteria === null) {
-      this.sortAscending = true;
-    }
-    if (criteria === this.sortCriteria) {
-      if (this.sortAscending === false) {
-        this.sortAscending = true;
-      } else {
-        this.sortCriteria = null;
-      }
+    if (criteria === 'points') {
+      this.sortAscending = false;
+    } else if (criteria === this.sortCriteria) {
+      this.sortAscending = !this.sortAscending;
     } else {
-      this.sortCriteria = criteria;
       this.sortAscending = false;
     }
+    this.sortCriteria = criteria;
     this.tableCalculator.sortBy(this.sortCriteria, this.sortAscending);
   }
 
