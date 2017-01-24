@@ -15,6 +15,21 @@ export class TableCalculatorService {
 
   public getTable() {
     return this.fixtureLoader.fixtures$
+      .do(fixtures => console.log(`today: ${fixtures.length}`))
+      .map(fixtures => this.calculateTable(fixtures))
+      .combineLatest(this.sortOptions$, (tableUnsorted, sortOptions) => this.sortTable(tableUnsorted, sortOptions))
+      .combineLatest(this.getTableYesterday(), (today, yesterday) => this.setMovement(today, yesterday));
+  }
+
+  public getTableYesterday() {
+    return this.fixtureLoader.fixtures$
+      .map(fixtures => {
+        let yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        console.log(yesterday);
+        return _.filter(fixtures, fix => fix.dateEntered == null || new Date(fix.dateEntered) <= yesterday);
+      })
+      .do(fixtures => console.log(`yesterday: ${fixtures.length}`))
       .map(fixtures => this.calculateTable(fixtures))
       .combineLatest(this.sortOptions$, (tableUnsorted, sortOptions) => this.sortTable(tableUnsorted, sortOptions));
   }
@@ -67,6 +82,18 @@ export class TableCalculatorService {
     if (!entries.has(player)) {
       entries.set(player, new TableEntry(player, 0, 0, 0, 0, 0));
     }
+  }
+
+  private setMovement(tableToday: TableEntry[], tableYesterday: TableEntry[]) {
+    tableToday.forEach((entry, index) => {
+      let indexYesterday = tableYesterday.findIndex(x => x.playerName === entry.playerName);
+      if (index < indexYesterday) {
+        tableToday[index].movement = 'up';
+      } else if (index > indexYesterday) {
+        tableToday[index].movement = 'down';
+      }
+    });
+    return tableToday;
   }
 
   public sortBy(criteria: string, ascending: boolean) {

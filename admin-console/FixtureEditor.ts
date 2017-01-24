@@ -19,6 +19,7 @@ export class FixtureEditor {
     fixture.goalsA = goalsA;
     fixture.goalsB = goalsB;
     fixture.matchNumber = this.nextMatchNumber;
+    fixture.dateEntered = new Date();
 
     if (!Fixture.isComplete(fixture)) {
       throw new Error(`Fixture values invalid! goalsA: ${goalsA}, goalsB: ${goalsB}, nextMatchNumber: ${this.nextMatchNumber}`);

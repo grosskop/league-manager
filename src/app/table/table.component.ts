@@ -22,10 +22,9 @@ export class TableComponent implements OnInit, OnDestroy {
     this.subscription = tableCalculator.getTable().subscribe(
       entries => {
         this.sortedTableEntries = entries;
-        console.log('new table: ' + JSON.stringify(entries));
       },
       err => console.error(err)
-    );
+      );
   }
 
   ngOnInit() {

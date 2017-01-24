@@ -1,4 +1,7 @@
 export class TableEntry {
+
+  public movement: string;
+
   constructor(
     public playerName: string,
     public wins: number,
@@ -23,6 +26,6 @@ export class TableEntry {
     if (this.played === 0) {
       return 0;
     }
-    return Math.round( this.points / this.played * 100) / 100;
+    return Math.round(this.points / this.played * 100) / 100;
   }
 }
