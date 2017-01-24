@@ -483,7 +483,11 @@
   },
   {
     "teamA": "Erkan",
-    "teamB": "Timm"
+    "teamB": "Timm",
+    "goalsA": 0,
+    "goalsB": 3,
+    "matchNumber": 146,
+    "dateEntered": "2017-01-24T17:17:44.591Z"
   },
   {
     "teamA": "Erkan",
