@@ -17,6 +17,14 @@ th:nth-child(2) {
   width: 20%;
 }
 
+th:last-child {
+  width: 3%;
+}
+
+th:last-child:hover::after {
+  content: '';
+}
+
 th:hover {
   cursor: pointer;
 }

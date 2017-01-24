@@ -15,10 +15,10 @@ export class TableCalculatorService {
 
   public getTable() {
     return this.fixtureLoader.fixtures$
-      .do(fixtures => console.log(`today: ${fixtures.length}`))
       .map(fixtures => this.calculateTable(fixtures))
-      .combineLatest(this.sortOptions$, (tableUnsorted, sortOptions) => this.sortTable(tableUnsorted, sortOptions))
-      .combineLatest(this.getTableYesterday(), (today, yesterday) => this.setMovement(today, yesterday));
+      .combineLatest(this.sortOptions$, (tableUnsorted, sortOptions) => [this.sortTable(tableUnsorted, sortOptions), sortOptions])
+      .combineLatest(this.getTableYesterday(),
+      (result: [TableEntry[], SortOptions], yesterday) => this.setMovement(result[0], yesterday, result[1]));
   }
 
   public getTableYesterday() {
@@ -29,9 +29,8 @@ export class TableCalculatorService {
         console.log(yesterday);
         return _.filter(fixtures, fix => fix.dateEntered == null || new Date(fix.dateEntered) <= yesterday);
       })
-      .do(fixtures => console.log(`yesterday: ${fixtures.length}`))
       .map(fixtures => this.calculateTable(fixtures))
-      .combineLatest(this.sortOptions$, (tableUnsorted, sortOptions) => this.sortTable(tableUnsorted, sortOptions));
+      .map(tableUnsorted => this.sortTable(tableUnsorted, { criteria: null, ascending: true }));
   }
 
   private calculateTable(fixtures: Fixture[]) {
@@ -84,10 +83,12 @@ export class TableCalculatorService {
     }
   }
 
-  private setMovement(tableToday: TableEntry[], tableYesterday: TableEntry[]) {
+  private setMovement(tableToday: TableEntry[], tableYesterday: TableEntry[], sortOptions: SortOptions) {
     tableToday.forEach((entry, index) => {
       let indexYesterday = tableYesterday.findIndex(x => x.playerName === entry.playerName);
-      if (index < indexYesterday) {
+      if (sortOptions != null && sortOptions.criteria != null) { // dont show movement on non-default order
+        tableToday[index].movement = null;
+      } else if (index < indexYesterday) {
         tableToday[index].movement = 'up';
       } else if (index > indexYesterday) {
         tableToday[index].movement = 'down';

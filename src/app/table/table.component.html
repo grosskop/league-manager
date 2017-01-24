@@ -18,7 +18,7 @@
       <th class="hidden-md hidden-sm hidden-xs" title="Points per Match" [class.selected]="sortCriteria === 'pointsPerMatch'" (click)="sortBy('pointsPerMatch')">PPM</th>
       <th class="hidden-xs" (click)="sortBy(null)">Points</th>
       <th class="hidden-lg hidden-md hidden-sm">P</th>
-      <th class="hidden-xs"><i class="fa fa-exchange fa-rotate-90" aria-hidden="true"></i></th>
+      <th class="text-left hidden-xs"></th>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +35,7 @@
       <td class="hidden-sm hidden-xs">{{entry.goalDifference}}</td>
       <td class="hidden-md hidden-sm hidden-xs">{{entry.pointsPerMatch}}</td>
       <td>{{entry.points}}</td>
-      <td>
+      <td class="text-left">
         <i class="fa fa-arrow-up text-success" *ngIf="entry.movement === 'up'"></i>
         <i class="fa fa-arrow-down text-danger" *ngIf="entry.movement === 'down'"></i>
       </td>
