@@ -181,7 +181,10 @@
   },
   {
     "teamA": "Bernd",
-    "teamB": "Linus"
+    "teamB": "Linus",
+    "goalsA": 0,
+    "goalsB": 2,
+    "matchNumber": 145
   },
   {
     "teamA": "Bernd",
@@ -793,7 +796,10 @@
   },
   {
     "teamA": "Linus",
-    "teamB": "Bernd"
+    "teamB": "Bernd",
+    "goalsA": 3,
+    "goalsB": 1,
+    "matchNumber": 144
   },
   {
     "teamA": "Linus",
