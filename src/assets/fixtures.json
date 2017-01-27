@@ -739,7 +739,11 @@
   },
   {
     "teamA": "Linus",
-    "teamB": "Timm"
+    "teamB": "Timm",
+    "goalsA": 0,
+    "goalsB": 1,
+    "matchNumber": 147,
+    "dateEntered": "2017-01-27T10:35:26.800Z"
   },
   {
     "teamA": "Linus",
@@ -990,7 +994,11 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Christian P."
+    "teamB": "Christian P.",
+    "goalsA": 2,
+    "goalsB": 0,
+    "matchNumber": 148,
+    "dateEntered": "2017-01-27T10:35:42.091Z"
   },
   {
     "teamA": "Marcus",
