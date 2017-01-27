@@ -692,7 +692,11 @@
   },
   {
     "teamA": "Felix",
-    "teamB": "Erkan"
+    "teamB": "Erkan",
+    "goalsA": 4,
+    "goalsB": 0,
+    "matchNumber": 149,
+    "dateEntered": "2017-01-27T14:33:16.881Z"
   },
   {
     "teamA": "Felix",
