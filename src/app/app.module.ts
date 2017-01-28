@@ -1,3 +1,5 @@
+import { AppRoutingModule } from './app-routing,module';
+import { LeagueOverviewComponent } from './league-overview.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -13,10 +15,12 @@ import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.co
 
 @NgModule({
   declarations: [
+    AppRoutingModule,
     AppComponent,
     FixtureListComponent,
     TableComponent,
-    UpcomingMatchesComponent
+    UpcomingMatchesComponent,
+    LeagueOverviewComponent
   ],
   imports: [
     BrowserModule,

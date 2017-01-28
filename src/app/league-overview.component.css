@@ -1,0 +1,33 @@
+.fixtures {
+  padding: 10px;
+}
+
+.standing {
+  padding: 25px;
+  background: white;
+}
+
+h1 {
+  background-color: firebrick;
+  color: white;
+  border: none;
+  padding: 25px;
+  margin: 0 0 20px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tool {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: white;
+  text-align: center;
+}
+
+.tool img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}

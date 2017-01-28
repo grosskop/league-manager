@@ -1,17 +1,1 @@
-<h1>
-  {{title}}
-</h1>
-<div class="tool"><img src="assets/angular.svg" class="logo" /><span class="hidden-xs">Built with Angular2</span></div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="standing col-xs-12 col-sm-6 col-md-6">
-      <lm-table [searchTerm]="searchTerm" (selectedPlayerChanged)="searchTerm = $event"></lm-table>
-    </div>
-    <div class="fixtures col-xs-12 col-sm-6 col-md-3">
-      <lm-fixture-list [searchTerm]="searchTerm"></lm-fixture-list>
-    </div>
-    <div class="fixtures col-xs-12 col-sm-12  col-md-3">
-      <lm-upcoming-matches [searchTerm]="searchTerm"></lm-upcoming-matches>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
