@@ -29,7 +29,9 @@
     "lodash": "4.17.4",
     "aws-sdk": "2.9.0",
     "amazon-cognito-identity-js": "1.12.0",
-    "sjcl": "1.0.6"
+    "sjcl": "1.0.6",
+    "jsbn": "0.1.0",
+    "moment": "2.17.1"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.4.5",

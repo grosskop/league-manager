@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +15,6 @@ export const authRoutes = [
     ],
     exports: [RouterModule],
     declarations: [LoginComponent],
-    providers: [],
+    providers: [AuthService],
 })
 export class AuthModule { }
