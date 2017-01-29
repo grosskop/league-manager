@@ -15,7 +15,7 @@ export class FixtureGeneratorService {
 
   loadPlayers() {
     return this.http.request('/assets/players.json')
-      .map<string[]>(res => res.json());
+      .map(res => res.json());
   }
 
   generateFixtures() {

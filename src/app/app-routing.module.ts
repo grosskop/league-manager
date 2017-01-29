@@ -1,16 +1,15 @@
-import { LoginComponent } from './login/login.component';
+import { LeagueOverviewComponent } from './league-overview.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const appRoutes: Routes = [
-  { path: '', component:  },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LeagueOverviewComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule],
     declarations: [],
-    providers: [],
+    providers: []
 })
 export class AppRoutingModule { }

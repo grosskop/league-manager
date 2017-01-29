@@ -1,9 +1,10 @@
-import { AppRoutingModule } from './app-routing,module';
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
+import { APP_BASE_HREF } from '@angular/common';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
 import { LeagueOverviewComponent } from './league-overview.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FixtureListComponent } from './fixture-list/fixture-list.component';
@@ -15,7 +16,6 @@ import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.co
 
 @NgModule({
   declarations: [
-    AppRoutingModule,
     AppComponent,
     FixtureListComponent,
     TableComponent,
@@ -23,9 +23,9 @@ import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.co
     LeagueOverviewComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
+    AppRoutingModule,
+    SharedModule,
+    AuthModule
   ],
   providers: [
     TableCalculatorService,
@@ -33,9 +33,17 @@ import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.co
     FixtureService,
     {
       provide: APP_INITIALIZER,
-      useFactory: (fixtureService: FixtureService) => () => fixtureService.init(), deps: [FixtureService], multi: true
-    }
+      useFactory: initFixtureService,
+      deps: [FixtureService],
+      multi: true
+    },
+    {
+      provide: APP_BASE_HREF, useValue : environment.baseUrl }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function initFixtureService(fixtureService: FixtureService) {
+  return () => fixtureService.init();
+}
