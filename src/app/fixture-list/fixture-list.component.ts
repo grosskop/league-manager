@@ -19,14 +19,14 @@ export class FixtureListComponent implements OnInit {
   filteredFixtures: Fixture[];
 
   constructor(private tableCalculator: TableCalculatorService, private fixtureLoader: FixtureService) {
+  }
+
+  ngOnInit() {
     this.fixtureLoader.fixtures$.subscribe(fixtures => {
       this.fixtures = this.filteredFixtures = fixtures;
       this.filterFixtures(null);
       this.sortFixtures();
     });
-  }
-
-  ngOnInit() {
   }
 
   @Input() set searchTerm(searchTerm: string) {
