@@ -1,0 +1,12 @@
+<div class="toplogin">
+  <form role="form" #loginForm="ngForm">
+    <div *ngIf="loginVisible" class="loginForm">
+      <input type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="Username">
+      <input type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Password">
+    </div>
+    <button class="user" (click)="userClicked()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+      <i class="fa" [class.fa-user-circle]="!loggedIn" [class.fa-user]="loggedIn"></i><br />
+      {{buttonText}}
+    </button>
+  </form>
+</div>

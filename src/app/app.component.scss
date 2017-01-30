@@ -1,0 +1,35 @@
+header {
+  position: relative;
+  margin: 0 0 20px 0;
+  background-color: firebrick;
+  color: white;
+  overflow: auto;
+  padding: 25px 25px 10px 25px;
+}
+
+h1 {
+  float: left;
+  border: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+.subheading {
+  position: absolute;
+  top: 60px;
+  left: 265px;
+  $size: 10px;
+  font-size: $size;
+  line-height: $size;
+}
+
+.subheading img {
+  width: 20px;
+  height: 20px;
+}
+
+div.user {
+  float: right;
+  color: white;
+  cursor: pointer;
+}

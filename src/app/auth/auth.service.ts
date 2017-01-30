@@ -16,7 +16,7 @@ export class AuthService {
         this.userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
     }
 
-    login(username: string, password: string) {
+    logIn(username: string, password: string) {
         let authenticationDetails = new AWSCognito.CognitoIdentityServiceProvider.AuthenticationDetails({
             Username: username,
             Password: password,
@@ -52,7 +52,19 @@ export class AuthService {
         });
     }
 
-    getUserName() {
-        return this.userPool.getCurrentUser().username;
+    getUser() {
+        return this.userPool.getCurrentUser();
+    }
+
+    logOut() {
+        this.getUser().signOut();
+    }
+
+    getUserName(): string {
+        let user = this.getUser();
+        if (user == null) {
+            return null;
+        }
+        return user.username;
     }
 }
