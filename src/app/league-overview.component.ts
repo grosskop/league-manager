@@ -8,14 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeagueOverviewComponent implements OnInit {
   searchTerm = '';
-  username: string;
 
-  title = 'African Championships';
+  ngOnInit(): void {
 
-  constructor(private authService: AuthService) {}
-
-  ngOnInit() {
-    this.username = this.authService.getUserName();
-    console.log('username: ' + this.username);
   }
 }
