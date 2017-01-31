@@ -17,6 +17,9 @@ export class AuthService {
     }
 
     logIn(username: string, password: string) {
+        if(username == null || password == null) {
+            return Observable.throw('Missing credentials!');
+        }
         let authenticationDetails = new AWSCognito.CognitoIdentityServiceProvider.AuthenticationDetails({
             Username: username,
             Password: password,
