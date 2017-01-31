@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: '/league-manager/',
+  baseUrl: '/',
   fixturesUrl: 'assets/fixtures.json',
   region: 'eu-central-1',
   userpoolId: 'eu-central-1_Ag3bgriK2',

@@ -16,6 +16,7 @@ export class TopLoginComponent implements OnInit {
     loginVisible = false;
     loggedIn = false;
     loggingIn = false;
+    loginFailed = false;
 
     constructor(private authService: AuthService, private router: Router) { }
 
@@ -36,7 +37,9 @@ export class TopLoginComponent implements OnInit {
             this.loginVisible = true;
             this.buttonText = 'Go for it';
         } else {
+            this.loginFailed = false;
             this.loggingIn = true;
+            this.buttonText = 'Go for it';
             this.authService.logIn(this.username, this.password).subscribe(
                 () => {
                     console.log('login succeeded!');
@@ -48,6 +51,8 @@ export class TopLoginComponent implements OnInit {
                 err => {
                     console.error(err);
                     this.loggingIn = false;
+                    this.loginFailed = true;
+                    this.buttonText = 'Whoops!';
                 }
             );
         }

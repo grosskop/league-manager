@@ -6,7 +6,8 @@
     </div>
     <button class="user" [class.spinner]="!loginVisible" (click)="userClicked()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
       <i class="fa fa-user-circle" *ngIf="!loggedIn && !loginVisible"></i>
-      <i class="fa fa-arrow-right animated" [class.bounceOutRight]="loggingIn" *ngIf="!loggedIn && loginVisible"></i>
+      <i class="fa fa-arrow-right animated" [class.bounceOutRight]="loggingIn" *ngIf="!loggedIn && loginVisible && !loginFailed"></i>
+      <i class="fa fa-times" *ngIf="loginFailed"></i>
       <i class="fa fa-user animated bounceInUp" *ngIf="loggedIn "></i>
       <br />
       {{buttonText}}
