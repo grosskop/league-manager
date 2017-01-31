@@ -1006,7 +1006,11 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Bernd"
+    "teamB": "Bernd",
+    "goalsA": 4,
+    "goalsB": 0,
+    "matchNumber": 150,
+    "dateEntered": "2017-01-30T15:19:25.447Z"
   },
   {
     "teamA": "Marcus",

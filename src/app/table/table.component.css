@@ -5,19 +5,22 @@ table {
 
 th:not(.text-left):not(.text-right), td:not(.text-left):not(.text-right) {
   text-align: center;
+}
+
+.short {
   width: 9%;
   white-space: nowrap;
+}
+
+.long {
+  width: 20%;
 }
 
 th:nth-child(1) {
   width: 4%;
 }
 
-th:nth-child(2) {
-  width: 20%;
-}
-
-th:last-child {
+th:last-child, td:last-child {
   width: 3%;
 }
 

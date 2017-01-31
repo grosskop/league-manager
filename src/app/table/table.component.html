@@ -4,37 +4,40 @@
     <tr [class.asc]="sortAscending === true">
       <th class="text-right">#</th>
       <th class="text-left long" [class.selected]="sortCriteria === 'playerName'" (click)="sortBy('playerName')">Player</th>
-      <th class="hidden-xs" [class.selected]="sortCriteria === 'played'" (click)="sortBy('played')">Matches</th>
-      <th class="hidden-lg hidden-md hidden-sm">M</th>
-      <th class="hidden-xs" [class.selected]="sortCriteria === 'wins'" (click)="sortBy('wins')">Wins</th>
-      <th class="hidden-lg hidden-md hidden-sm">W</th>
-      <th class="hidden-xs" [class.selected]="sortCriteria === 'draws'" (click)="sortBy('draws')">Draws</th>
-      <th class="hidden-lg hidden-md hidden-sm">D</th>
-      <th class="hidden-xs" [class.selected]="sortCriteria === 'losses'" (click)="sortBy('losses')">Losses</th>
-      <th class="hidden-lg hidden-md hidden-sm">L</th>
-      <th class="hidden-md hidden-sm hidden-xs" title="Goal Scored" [class.selected]="sortCriteria === 'goalsScored'" (click)="sortBy('goalsScored')">Scored</th>
-      <th class="hidden-md hidden-sm hidden-xs" title="Goal Conceded" [class.selected]="sortCriteria === 'goalsConceded'" (click)="sortBy('goalsConceded')">Conceded</th>
-      <th class="hidden-sm hidden-xs" title="Goal Difference" [class.selected]="sortCriteria === 'goalDifference'" (click)="sortBy('goalDifference')">GD</th>
-      <th class="hidden-md hidden-sm hidden-xs" title="Points per Match" [class.selected]="sortCriteria === 'pointsPerMatch'" (click)="sortBy('pointsPerMatch')">PPM</th>
-      <th class="hidden-xs" (click)="sortBy('points')">Points</th>
-      <th class="hidden-lg hidden-md hidden-sm">P</th>
-      <th class="text-left hidden-xs"></th>
+      <th class="short sortable" [class.selected]="sortCriteria === 'played'" (click)="sortBy('played')">
+        M<span class="hidden-xs">atches</span>
+      </th>
+      <th class="short sortable" [class.selected]="sortCriteria === 'wins'" (click)="sortBy('wins')">
+        W<span class="hidden-xs">ins</span>
+      </th>
+      <th class="short sortable" [class.selected]="sortCriteria === 'draws'" (click)="sortBy('draws')">
+        D<span class="hidden-xs">raws</span>
+      </th>
+      <th class="short sortable" [class.selected]="sortCriteria === 'losses'" (click)="sortBy('losses')">
+        L<span class="hidden-xs">osses</span>
+      </th>
+      <th class="short sortable hidden-md hidden-sm hidden-xs" title="Goal Scored" [class.selected]="sortCriteria === 'goalsScored'" (click)="sortBy('goalsScored')">Scored</th>
+      <th class="short sortable hidden-md hidden-sm hidden-xs" title="Goal Conceded" [class.selected]="sortCriteria === 'goalsConceded'" (click)="sortBy('goalsConceded')">Conceded</th>
+      <th class="short sortable hidden-sm hidden-xs" title="Goal Difference" [class.selected]="sortCriteria === 'goalDifference'" (click)="sortBy('goalDifference')">GD</th>
+      <th class="short sortable hidden-md hidden-sm hidden-xs" title="Points per Match" [class.selected]="sortCriteria === 'pointsPerMatch'" (click)="sortBy('pointsPerMatch')">PPM</th>
+      <th class="short sortable" (click)="sortBy('points')">P<span class="hidden-xs">oints</span></th>
+      <th class="short text-left"></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let entry of sortedTableEntries; let index = index;"
         [class.highlighted]="isHighlighted(entry.playerName)" (click)="selectPlayer(entry.playerName)">
       <td class="text-right">{{index+1}}</td>
-      <td class="text-left">{{entry.playerName}}</td>
-      <td>{{entry.played}}</td>
-      <td>{{entry.wins}}</td>
-      <td>{{entry.draws}}</td>
-      <td>{{entry.losses}}</td>
-      <td class="hidden-md hidden-sm hidden-xs">{{entry.goalsScored}}</td>
-      <td class="hidden-md hidden-sm hidden-xs">{{entry.goalsConceded}}</td>
-      <td class="hidden-sm hidden-xs">{{entry.goalDifference}}</td>
-      <td class="hidden-md hidden-sm hidden-xs">{{entry.pointsPerMatch}}</td>
-      <td>{{entry.points}}</td>
+      <td class="long text-left">{{entry.playerName}}</td>
+      <td class="short">{{entry.played}}</td>
+      <td class="short">{{entry.wins}}</td>
+      <td class="short">{{entry.draws}}</td>
+      <td class="short">{{entry.losses}}</td>
+      <td class="short hidden-md hidden-sm hidden-xs">{{entry.goalsScored}}</td>
+      <td class="short hidden-md hidden-sm hidden-xs">{{entry.goalsConceded}}</td>
+      <td class="short hidden-sm hidden-xs">{{entry.goalDifference}}</td>
+      <td class="short hidden-md hidden-sm hidden-xs">{{entry.pointsPerMatch}}</td>
+      <td class="short">{{entry.points}}</td>
       <td class="text-left">
         <i class="fa fa-arrow-up text-success" *ngIf="entry.movement === 'up'"></i>
         <i class="fa fa-arrow-down text-danger" *ngIf="entry.movement === 'down'"></i>
