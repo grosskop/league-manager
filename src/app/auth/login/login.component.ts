@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
     submit(event: Event) {
         event.preventDefault();
-        this.authService.login(this.username, this.password).subscribe(
+        this.authService.logIn(this.username, this.password).subscribe(
             () => {
                 console.log('login succeeded!');
                 this.router.navigate(['']);

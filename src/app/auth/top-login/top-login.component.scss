@@ -15,13 +15,14 @@ button.user {
   outline: none;
   text-align: center;
   float: left;
+  overflow: hidden;
 }
 
 button.user i {
   font-size: 40px;
 }
 
-button.user:hover i {
+button.spinner:hover i {
   -webkit-transition: -webkit-transform .8s ease-in-out;
   transition: transform .8s ease-in-out;
   -webkit-transform: rotateY(360deg);

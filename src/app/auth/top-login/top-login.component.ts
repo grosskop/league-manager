@@ -15,6 +15,7 @@ export class TopLoginComponent implements OnInit {
     buttonText = 'Login';
     loginVisible = false;
     loggedIn = false;
+    loggingIn = false;
 
     constructor(private authService: AuthService, private router: Router) { }
 
@@ -35,14 +36,19 @@ export class TopLoginComponent implements OnInit {
             this.loginVisible = true;
             this.buttonText = 'Go for it';
         } else {
+            this.loggingIn = true;
             this.authService.logIn(this.username, this.password).subscribe(
                 () => {
                     console.log('login succeeded!');
                     this.loginVisible = false;
                     this.loggedIn = true;
                     this.buttonText = this.authService.getUserName();
+                    this.loggingIn = false;
                 },
-                err => console.error(err)
+                err => {
+                    console.error(err);
+                    this.loggingIn = false;
+                }
             );
         }
     }

@@ -1,11 +1,14 @@
 <div class="toplogin">
   <form role="form" #loginForm="ngForm">
-    <div *ngIf="loginVisible" class="loginForm">
+    <div *ngIf="loginVisible" class="loginForm animated bounceInDown">
       <input type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="Username">
       <input type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Password">
     </div>
-    <button class="user" (click)="userClicked()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-      <i class="fa" [class.fa-user-circle]="!loggedIn" [class.fa-user]="loggedIn"></i><br />
+    <button class="user" [class.spinner]="!loginVisible" (click)="userClicked()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+      <i class="fa fa-user-circle" *ngIf="!loggedIn && !loginVisible"></i>
+      <i class="fa fa-arrow-right animated" [class.bounceOutRight]="loggingIn" *ngIf="!loggedIn && loginVisible"></i>
+      <i class="fa fa-user animated bounceInUp" *ngIf="loggedIn "></i>
+      <br />
       {{buttonText}}
     </button>
   </form>
