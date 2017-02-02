@@ -264,7 +264,11 @@
   },
   {
     "teamA": "Christian P.",
-    "teamB": "Linus"
+    "teamB": "Linus",
+    "goalsA": 0,
+    "goalsB": 0,
+    "matchNumber": 153,
+    "dateEntered": "2017-02-02T15:19:32.927Z"
   },
   {
     "teamA": "Christian P.",
@@ -755,7 +759,11 @@
   },
   {
     "teamA": "Linus",
-    "teamB": "Steffen"
+    "teamB": "Steffen",
+    "goalsA": 4,
+    "goalsB": 1,
+    "matchNumber": 154,
+    "dateEntered": "2017-02-02T15:19:59.908Z"
   },
   {
     "teamA": "Linus",
@@ -809,7 +817,11 @@
   },
   {
     "teamA": "Linus",
-    "teamB": "Christian P."
+    "teamB": "Christian P.",
+    "goalsA": 2,
+    "goalsB": 0,
+    "matchNumber": 152,
+    "dateEntered": "2017-02-02T15:19:22.340Z"
   },
   {
     "teamA": "Linus",
