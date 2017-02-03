@@ -208,7 +208,11 @@
   },
   {
     "teamA": "Bernd",
-    "teamB": "Dominik"
+    "teamB": "Dominik",
+    "goalsA": 1,
+    "goalsB": 2,
+    "matchNumber": 156,
+    "dateEntered": "2017-02-03T15:21:45.284Z"
   },
   {
     "teamA": "Bernd",
@@ -246,7 +250,11 @@
   },
   {
     "teamA": "Christian P.",
-    "teamB": "Sebastian"
+    "teamB": "Sebastian",
+    "goalsA": 3,
+    "goalsB": 0,
+    "matchNumber": 155,
+    "dateEntered": "2017-02-03T15:21:37.793Z"
   },
   {
     "teamA": "Christian P.",
