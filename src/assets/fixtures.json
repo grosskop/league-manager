@@ -42,10 +42,6 @@
   },
   {
     "teamA": "Andrea",
-    "teamB": "Fabian S."
-  },
-  {
-    "teamA": "Andrea",
     "teamB": "Erkan"
   },
   {
@@ -69,82 +65,6 @@
     "goalsA": 0,
     "goalsB": 4,
     "matchNumber": 69
-  },
-  {
-    "teamA": "Andrea",
-    "teamB": "Andreas R."
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Tjark"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Timm"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Steffen"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Sebastian",
-    "goalsA": 1,
-    "goalsB": 0,
-    "matchNumber": 15
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Marcus"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Marcello"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Linus"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Felix",
-    "goalsA": 0,
-    "goalsB": 2,
-    "matchNumber": 131
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Fabian S.",
-    "goalsA": 4,
-    "goalsB": 0,
-    "matchNumber": 14
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Erkan",
-    "goalsA": 1,
-    "goalsB": 0,
-    "matchNumber": 132
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Dominik"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "David"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Christian P."
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Bernd"
-  },
-  {
-    "teamA": "Andreas R.",
-    "teamB": "Andrea"
   },
   {
     "teamA": "Bernd",
@@ -193,11 +113,11 @@
   },
   {
     "teamA": "Bernd",
-    "teamB": "Felix"
-  },
-  {
-    "teamA": "Bernd",
-    "teamB": "Fabian S."
+    "teamB": "Felix",
+    "goalsA": 0,
+    "goalsB": 1,
+    "matchNumber": 157,
+    "dateEntered": "2017-02-06T16:09:50.975Z"
   },
   {
     "teamA": "Bernd",
@@ -221,13 +141,6 @@
   {
     "teamA": "Bernd",
     "teamB": "Christian P."
-  },
-  {
-    "teamA": "Bernd",
-    "teamB": "Andreas R.",
-    "goalsA": 1,
-    "goalsB": 1,
-    "matchNumber": 65
   },
   {
     "teamA": "Bernd",
@@ -284,10 +197,6 @@
   },
   {
     "teamA": "Christian P.",
-    "teamB": "Fabian S."
-  },
-  {
-    "teamA": "Christian P.",
     "teamB": "Erkan"
   },
   {
@@ -304,10 +213,6 @@
   {
     "teamA": "Christian P.",
     "teamB": "Bernd"
-  },
-  {
-    "teamA": "Christian P.",
-    "teamB": "Andreas R."
   },
   {
     "teamA": "Christian P.",
@@ -359,10 +264,6 @@
   },
   {
     "teamA": "David",
-    "teamB": "Fabian S."
-  },
-  {
-    "teamA": "David",
     "teamB": "Erkan"
   },
   {
@@ -379,10 +280,6 @@
   {
     "teamA": "David",
     "teamB": "Bernd"
-  },
-  {
-    "teamA": "David",
-    "teamB": "Andreas R."
   },
   {
     "teamA": "David",
@@ -446,13 +343,6 @@
   },
   {
     "teamA": "Dominik",
-    "teamB": "Fabian S.",
-    "goalsA": 5,
-    "goalsB": 0,
-    "matchNumber": 45
-  },
-  {
-    "teamA": "Dominik",
     "teamB": "Erkan",
     "goalsA": 2,
     "goalsB": 0,
@@ -478,13 +368,6 @@
     "goalsA": 1,
     "goalsB": 1,
     "matchNumber": 62
-  },
-  {
-    "teamA": "Dominik",
-    "teamB": "Andreas R.",
-    "goalsA": 2,
-    "goalsB": 1,
-    "matchNumber": 55
   },
   {
     "teamA": "Dominik",
@@ -546,13 +429,6 @@
   },
   {
     "teamA": "Erkan",
-    "teamB": "Fabian S.",
-    "goalsA": 0,
-    "goalsB": 0,
-    "matchNumber": 77
-  },
-  {
-    "teamA": "Erkan",
     "teamB": "Dominik",
     "goalsA": 0,
     "goalsB": 3,
@@ -575,79 +451,6 @@
   },
   {
     "teamA": "Erkan",
-    "teamB": "Andreas R."
-  },
-  {
-    "teamA": "Erkan",
-    "teamB": "Andrea"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Tjark"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Timm",
-    "goalsA": 0,
-    "goalsB": 5,
-    "matchNumber": 134
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Steffen"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Sebastian",
-    "goalsA": 1,
-    "goalsB": 1,
-    "matchNumber": 91
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Marcus",
-    "goalsA": 0,
-    "goalsB": 5,
-    "matchNumber": 80
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Marcello"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Linus"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Felix"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Erkan"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Dominik"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "David"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Christian P."
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Bernd"
-  },
-  {
-    "teamA": "Fabian S.",
-    "teamB": "Andreas R."
-  },
-  {
-    "teamA": "Fabian S.",
     "teamB": "Andrea"
   },
   {
@@ -701,13 +504,6 @@
   },
   {
     "teamA": "Felix",
-    "teamB": "Fabian S.",
-    "goalsA": 0,
-    "goalsB": 0,
-    "matchNumber": 8
-  },
-  {
-    "teamA": "Felix",
     "teamB": "Erkan",
     "goalsA": 4,
     "goalsB": 0,
@@ -738,10 +534,6 @@
     "goalsA": 0,
     "goalsB": 0,
     "matchNumber": 118
-  },
-  {
-    "teamA": "Felix",
-    "teamB": "Andreas R."
   },
   {
     "teamA": "Felix",
@@ -800,10 +592,6 @@
   },
   {
     "teamA": "Linus",
-    "teamB": "Fabian S."
-  },
-  {
-    "teamA": "Linus",
     "teamB": "Erkan",
     "goalsA": 3,
     "goalsB": 0,
@@ -838,10 +626,6 @@
     "goalsB": 1,
     "matchNumber": 144,
     "dateEntered": "2017-01-24T14:21:00.000Z"
-  },
-  {
-    "teamA": "Linus",
-    "teamB": "Andreas R."
   },
   {
     "teamA": "Linus",
@@ -895,13 +679,6 @@
   },
   {
     "teamA": "Marcello",
-    "teamB": "Fabian S.",
-    "goalsA": 1,
-    "goalsB": 1,
-    "matchNumber": 79
-  },
-  {
-    "teamA": "Marcello",
     "teamB": "Erkan",
     "goalsA": 1,
     "goalsB": 0,
@@ -934,13 +711,6 @@
     "goalsA": 0,
     "goalsB": 1,
     "matchNumber": 119
-  },
-  {
-    "teamA": "Marcello",
-    "teamB": "Andreas R.",
-    "goalsA": 1,
-    "goalsB": 0,
-    "matchNumber": 38
   },
   {
     "teamA": "Marcello",
@@ -994,13 +764,6 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Fabian S.",
-    "goalsA": 3,
-    "goalsB": 0,
-    "matchNumber": 18
-  },
-  {
-    "teamA": "Marcus",
     "teamB": "Erkan",
     "goalsA": 3,
     "goalsB": 0,
@@ -1035,10 +798,6 @@
     "goalsB": 0,
     "matchNumber": 150,
     "dateEntered": "2017-01-30T15:19:25.447Z"
-  },
-  {
-    "teamA": "Marcus",
-    "teamB": "Andreas R."
   },
   {
     "teamA": "Marcus",
@@ -1098,13 +857,6 @@
   },
   {
     "teamA": "Sebastian",
-    "teamB": "Fabian S.",
-    "goalsA": 1,
-    "goalsB": 1,
-    "matchNumber": 87
-  },
-  {
-    "teamA": "Sebastian",
     "teamB": "Erkan",
     "goalsA": 0,
     "goalsB": 0,
@@ -1137,10 +889,6 @@
     "goalsA": 0,
     "goalsB": 0,
     "matchNumber": 67
-  },
-  {
-    "teamA": "Sebastian",
-    "teamB": "Andreas R."
   },
   {
     "teamA": "Sebastian",
@@ -1200,13 +948,6 @@
   },
   {
     "teamA": "Steffen",
-    "teamB": "Fabian S.",
-    "goalsA": 0,
-    "goalsB": 1,
-    "matchNumber": 94
-  },
-  {
-    "teamA": "Steffen",
     "teamB": "Erkan",
     "goalsA": 2,
     "goalsB": 3,
@@ -1233,13 +974,6 @@
   {
     "teamA": "Steffen",
     "teamB": "Bernd"
-  },
-  {
-    "teamA": "Steffen",
-    "teamB": "Andreas R.",
-    "goalsA": 0,
-    "goalsB": 3,
-    "matchNumber": 13
   },
   {
     "teamA": "Steffen",
@@ -1296,13 +1030,6 @@
   },
   {
     "teamA": "Timm",
-    "teamB": "Fabian S.",
-    "goalsA": 5,
-    "goalsB": 0,
-    "matchNumber": 12
-  },
-  {
-    "teamA": "Timm",
     "teamB": "Erkan",
     "goalsA": 6,
     "goalsB": 0,
@@ -1329,13 +1056,6 @@
     "goalsA": 2,
     "goalsB": 1,
     "matchNumber": 68
-  },
-  {
-    "teamA": "Timm",
-    "teamB": "Andreas R.",
-    "goalsA": 4,
-    "goalsB": 0,
-    "matchNumber": 56
   },
   {
     "teamA": "Timm",
@@ -1392,13 +1112,6 @@
   },
   {
     "teamA": "Tjark",
-    "teamB": "Fabian S.",
-    "goalsA": 1,
-    "goalsB": 1,
-    "matchNumber": 82
-  },
-  {
-    "teamA": "Tjark",
     "teamB": "Erkan",
     "goalsA": 3,
     "goalsB": 1,
@@ -1428,13 +1141,6 @@
     "goalsA": 1,
     "goalsB": 0,
     "matchNumber": 64
-  },
-  {
-    "teamA": "Tjark",
-    "teamB": "Andreas R.",
-    "goalsA": 2,
-    "goalsB": 0,
-    "matchNumber": 63
   },
   {
     "teamA": "Tjark",
