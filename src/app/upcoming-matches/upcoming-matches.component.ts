@@ -1,8 +1,10 @@
+import { BehaviorSubject, Observable, Subject } from 'rxjs/Rx';
+import { AuthService } from '../auth/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Fixture } from '../fixture';
 
 import { TableCalculatorService } from '../table-calculator.service';
-import { FixtureService } from '../fixture-loader.service';
+import { FixtureService } from '../fixture.service';
 
 @Component({
   selector: 'lm-upcoming-matches',
@@ -11,34 +13,35 @@ import { FixtureService } from '../fixture-loader.service';
 })
 export class UpcomingMatchesComponent implements OnInit {
 
-  fixtures: Fixture[] = [];
+  public fixtures$: Observable<Fixture[]>;
+  public searchTerm$ = new BehaviorSubject<string>(null);
 
-  filteredFixtures: Fixture[];
-
-  constructor(private tableCalculator: TableCalculatorService, private fixtureLoader: FixtureService) {
+  constructor(private tableCalculator: TableCalculatorService, private fixtureService: FixtureService,
+    private authService: AuthService) {
   }
 
   ngOnInit() {
-    this.fixtureLoader.fixtures$.subscribe(fixtures => {
-      this.fixtures = this.filteredFixtures = fixtures;
-      this.filterFixtures(null);
-    });
+    this.searchTerm$.next(null);
+    this.fixtures$ = this.fixtureService.fixtures$
+      .combineLatest(this.searchTerm$, (fixtures, searchTerm) => { return { fixtures, searchTerm }; })
+      .map(data => this.filterFixtures(data.fixtures, data.searchTerm));
   }
 
   @Input() set searchTerm(searchTerm: string) {
-    this.filterFixtures(searchTerm);
+    this.searchTerm$.next(searchTerm);
   }
 
-  filterFixtures(term: string) {
+  filterFixtures(fixtures: Fixture[], term: string) {
+    let result: Fixture[];
     if (term === null) {
-      this.filteredFixtures = this.fixtures;
+      result = fixtures;
     } else {
-      this.filteredFixtures = this.fixtures.filter(fix => fix.teamA === term || fix.teamB === term);
+      result = fixtures.filter(fix => fix.teamA === term || fix.teamB === term);
     }
-    this.filteredFixtures = this.filteredFixtures.filter(fix => !Fixture.isComplete(fix));
+    return result.filter(fix => !Fixture.isComplete(fix));
   }
 
   onFixtureChange() {
-    this.fixtureLoader.updateFixtures(this.fixtures);
+    //this.fixtureService.updateFixtures(this.fixtures);
   }
 }

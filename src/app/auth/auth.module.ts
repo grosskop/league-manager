@@ -3,7 +3,7 @@ import { AuthService } from './auth.service';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 export const authRoutes = [
     { path: 'login', component: LoginComponent }
@@ -22,6 +22,8 @@ export const authRoutes = [
         LoginComponent,
         TopLoginComponent
     ],
-    providers: [AuthService],
+    providers: [
+        AuthService
+    ],
 })
 export class AuthModule { }
