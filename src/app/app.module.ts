@@ -1,3 +1,5 @@
+import { AuthService } from './auth/auth.service';
+import { S3ManagerService } from './services/s3-manager-service';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { APP_BASE_HREF } from '@angular/common';
@@ -11,7 +13,7 @@ import { FixtureListComponent } from './fixture-list/fixture-list.component';
 import { TableComponent } from './table/table.component';
 import { TableCalculatorService } from './table-calculator.service';
 import { FixtureGeneratorService } from './fixture-generator.service';
-import { FixtureService } from './fixture-loader.service';
+import { FixtureService } from './fixture.service';
 import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.component';
 
 @NgModule({
@@ -31,10 +33,11 @@ import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.co
     TableCalculatorService,
     FixtureGeneratorService,
     FixtureService,
+    S3ManagerService,
     {
       provide: APP_INITIALIZER,
       useFactory: initFixtureService,
-      deps: [FixtureService],
+      deps: [FixtureService, AuthModule],
       multi: true
     },
     {

@@ -2,7 +2,7 @@ import { BehaviorSubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { TableEntry } from './table-entry';
 import { Fixture } from './fixture';
-import { FixtureService } from './fixture-loader.service';
+import { FixtureService } from './fixture.service';
 import * as _ from 'lodash';
 
 @Injectable()

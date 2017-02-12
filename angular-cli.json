@@ -20,7 +20,9 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "assets/css/animate.css"
+        "assets/css/animate.css",
+        "../node_modules/aws-sdk/dist/aws-sdk.js",
+        "../node_modules/amazon-cognito-js/dist/amazon-cognito.min.js"
       ],
       "scripts": [],
       "environments": {

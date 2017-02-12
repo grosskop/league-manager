@@ -2,7 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {Fixture} from '../fixture';
 
 import {TableCalculatorService} from '../table-calculator.service';
-import {FixtureService} from '../fixture-loader.service';
+import {FixtureService} from '../fixture.service';
 import {FixtureResult} from '../fixture-result';
 
 @Component({
@@ -64,7 +64,7 @@ export class FixtureListComponent implements OnInit {
     return actualResult === FixtureResult[result];
   }
 
-  onFixtureChange() {
-    this.fixtureLoader.updateFixtures(this.fixtures);
+  onFixtureChange(fixture: Fixture) {
+    this.fixtureLoader.updateResult(fixture);
   }
 }
