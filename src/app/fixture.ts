@@ -1,8 +1,9 @@
 import { FixtureResult } from './fixture-result';
 export class Fixture {
 
-  public goalsA: number;
-  public goalsB: number;
+  private _goalsA: number;
+  private _goalsB: number;
+
   public matchNumber: number;
   public dateEntered: Date;
 
@@ -32,6 +33,32 @@ export class Fixture {
       return FixtureResult.Loss;
     }
     return FixtureResult.Draw;
+  }
+
+  public static revive(data)
+
+  public set goalsA(value: number) {
+    this.goalsA = value;
+    this.finalizeMatch();
+  }
+  public get goalsA() {
+    return this._goalsA;
+  }
+
+  public set goalsB(value: number) {
+    this.goalsB = value;
+    this.finalizeMatch();
+  }
+  public get goalsB() {
+    return this._goalsB;
+  }
+
+  private finalizeMatch() {
+    if (Fixture.isComplete(this)) {
+      this.dateEntered = new Date();
+    } else {
+      this.dateEntered = null;
+    }
   }
 
   constructor(public teamA: string, public teamB: string) {

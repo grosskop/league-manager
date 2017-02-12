@@ -41,7 +41,7 @@ export class UpcomingMatchesComponent implements OnInit {
     return result.filter(fix => !Fixture.isComplete(fix));
   }
 
-  onFixtureChange() {
-    //this.fixtureService.updateFixtures(this.fixtures);
+  onFixtureChange(fixture: Fixture) {
+    this.fixtureService.updateResult(fixture);
   }
 }

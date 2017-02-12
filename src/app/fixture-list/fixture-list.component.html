@@ -11,8 +11,8 @@
 			<td class="text-center">-</td>
 			<td>{{fixture.teamB}}</td>
 			<td>
-				<input readonly [(ngModel)]="fixture.goalsA" (ngModelChange)="onFixtureChange()" /> : <input readonly [(ngModel)]="fixture.goalsB"
-					(ngModelChange)="onFixtureChange()" /></td>
+				<input readonly [(ngModel)]="fixture.goalsA" (ngModelChange)="onFixtureChange(fixture)" /> : <input readonly [(ngModel)]="fixture.goalsB"
+					(ngModelChange)="onFixtureChange(fixture)" /></td>
 			<td><i *ngIf="_searchTerm" class="fa fa-futbol-o"></i>
 			</td>
 		</tr>

@@ -64,7 +64,7 @@ export class FixtureListComponent implements OnInit {
     return actualResult === FixtureResult[result];
   }
 
-  onFixtureChange() {
-    this.fixtureLoader.updateFixtures(this.fixtures);
+  onFixtureChange(fixture: Fixture) {
+    this.fixtureLoader.updateResult(fixture);
   }
 }

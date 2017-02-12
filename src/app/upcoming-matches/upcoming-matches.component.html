@@ -10,8 +10,8 @@
       <td class="text-center">-</td>
       <td>{{fixture.teamB}}</td>
       <td>
-        <input [(ngModel)]="fixture.goalsA" (ngModelChange)="onFixtureChange()" /> : <input [(ngModel)]="fixture.goalsB"
-          (ngModelChange)="onFixtureChange()" />
+        <input [(ngModel)]="fixture.goalsA" (ngModelChange)="onFixtureChange(fixture)" /> : <input [(ngModel)]="fixture.goalsB"
+          (ngModelChange)="onFixtureChange(fixture)" />
       </td>
     </tr>
   </tbody>
