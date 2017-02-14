@@ -12,16 +12,16 @@ export class FixtureEditor {
     }
     let fixture = this.fixtures[index];
 
-    if (Fixture.isComplete(fixture)) {
+    if (fixture.isComplete()) {
       throw new Error(`Match is already played! ${teamA} vs ${teamB}`);
     }
 
     fixture.goalsA = goalsA;
     fixture.goalsB = goalsB;
     fixture.matchNumber = this.nextMatchNumber;
-    fixture.dateEntered = new Date();
+    //fixture.dateEntered = new Date();
 
-    if (!Fixture.isComplete(fixture)) {
+    if (!fixture.isComplete()) {
       throw new Error(`Fixture values invalid! goalsA: ${goalsA}, goalsB: ${goalsB}, nextMatchNumber: ${this.nextMatchNumber}`);
     }
 

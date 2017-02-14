@@ -3,25 +3,52 @@ export class Fixture {
 
   private _goalsA: number;
   private _goalsB: number;
+  private _teamA: string;
+  private _teamB: string;
 
   public matchNumber: number;
-  public dateEntered: Date;
+  private _dateEntered: Date;
 
-  public static isComplete(fix: Fixture) {
-    return Number.isInteger(fix.goalsA)
-      && Number.isInteger(fix.goalsB)
-      && fix.goalsA > -1
-      && fix.goalsB > -1;
+  public static fromJson(json) {
+    return new Fixture(json.teamA, json.teamB,
+      json.goalsA == null ? null : Number(json.goalsA),
+      json.goalsB == null ? null : Number(json.goalsB),
+      json.dateEntered == null ? null : new Date(json.dateEntered));
   }
 
-  public static getResult(fix: Fixture, team: string) {
+  public toJsonObject() {
+    return {
+      teamA: this.teamA,
+      teamB: this.teamB,
+      goalsA: this.goalsA,
+      goalsB: this.goalsB,
+      dateEntered: this.dateEntered
+    };
+  }
+
+  private constructor(teamA: string, teamB: string, goalsA: number, goalsB: number, dateEntered: Date) {
+    this._teamA = teamA;
+    this._teamB = teamB;
+    this._goalsA = goalsA;
+    this._goalsB = goalsB;
+    this._dateEntered = dateEntered;
+  }
+
+  public isComplete() {
+    return Number.isInteger(this.goalsA)
+      && Number.isInteger(this.goalsB)
+      && this.goalsA > -1
+      && this.goalsB > -1;
+  }
+
+  public getResult(team: string) {
     let teamGoals, otherGoals;
-    if (fix.teamA === team) {
-      teamGoals = fix.goalsA;
-      otherGoals = fix.goalsB;
-    } else if (fix.teamB === team) {
-      teamGoals = fix.goalsB;
-      otherGoals = fix.goalsA;
+    if (this.teamA === team) {
+      teamGoals = this.goalsA;
+      otherGoals = this.goalsB;
+    } else if (this.teamB === team) {
+      teamGoals = this.goalsB;
+      otherGoals = this.goalsA;
     } else {
       throw new Error('Team did not play.');
     }
@@ -35,10 +62,8 @@ export class Fixture {
     return FixtureResult.Draw;
   }
 
-  public static revive(data)
-
   public set goalsA(value: number) {
-    this.goalsA = value;
+    this._goalsA = value;
     this.finalizeMatch();
   }
   public get goalsA() {
@@ -46,22 +71,28 @@ export class Fixture {
   }
 
   public set goalsB(value: number) {
-    this.goalsB = value;
+    this._goalsB = value;
     this.finalizeMatch();
   }
   public get goalsB() {
     return this._goalsB;
   }
 
-  private finalizeMatch() {
-    if (Fixture.isComplete(this)) {
-      this.dateEntered = new Date();
-    } else {
-      this.dateEntered = null;
-    }
+  public get teamA() {
+    return this._teamA;
+  }
+  public get teamB() {
+    return this._teamB;
+  }
+  public get dateEntered() {
+    return this._dateEntered;
   }
 
-  constructor(public teamA: string, public teamB: string) {
-
+  public finalizeMatch() {
+    if (this.isComplete()) {
+      this._dateEntered = new Date();
+    } else {
+      this._dateEntered = null;
+    }
   }
 }
