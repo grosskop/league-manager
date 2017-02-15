@@ -41,7 +41,7 @@ export class FixtureListComponent implements OnInit {
     } else {
       this.filteredFixtures = this.fixtures.filter(fix => fix.teamA === term || fix.teamB === term);
     }
-    this.filteredFixtures = this.filteredFixtures.filter(fix => Fixture.isComplete(fix));
+    this.filteredFixtures = this.filteredFixtures.filter(fix => fix.isComplete());
   }
 
   sortFixtures() {
@@ -57,10 +57,10 @@ export class FixtureListComponent implements OnInit {
   }
 
   public isResult(fixture, result: string) {
-    if (!this._searchTerm || !Fixture.isComplete(fixture)) {
+    if (!this._searchTerm || !fixture.isComplete()) {
       return false;
     }
-    let actualResult = Fixture.getResult(fixture, this._searchTerm);
+    let actualResult = fixture.getResult(this._searchTerm);
     return actualResult === FixtureResult[result];
   }
 

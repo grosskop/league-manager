@@ -39,7 +39,7 @@ export class TableCalculatorService {
     for (let fixture of fixtures) {
       this.ensureEntry(map, fixture.teamA);
       this.ensureEntry(map, fixture.teamB);
-      if (!Fixture.isComplete(fixture)) {
+      if (!fixture.isComplete()) {
         continue;
       }
       let result: number;

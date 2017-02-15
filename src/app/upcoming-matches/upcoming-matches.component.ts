@@ -38,10 +38,11 @@ export class UpcomingMatchesComponent implements OnInit {
     } else {
       result = fixtures.filter(fix => fix.teamA === term || fix.teamB === term);
     }
-    return result.filter(fix => !Fixture.isComplete(fix));
+    return result.filter(fix => !fix.isComplete());
   }
 
   onFixtureChange(fixture: Fixture) {
+    console.log('fixture changed', fixture);
     this.fixtureService.updateResult(fixture);
   }
 }

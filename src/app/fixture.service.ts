@@ -1,3 +1,4 @@
+import { ArrayUtils } from './utils/ArrayUtils';
 import { S3ManagerService } from './services/s3-manager-service';
 import { ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
@@ -27,7 +28,7 @@ export class FixtureService {
 
   public updateFixtures(fixtures: Fixture[]) {
     this.fixtures = fixtures;
-    this.s3.uploadFile('fixtures.json', JSON.stringify(fixtures)).subscribe(
+    this.s3.uploadFile('fixtures.json', JSON.stringify(fixtures.map(fix => fix.toJsonObject()))).subscribe(
       null, null,
       () => console.log('upload complete')
     );
@@ -36,13 +37,13 @@ export class FixtureService {
 
   public updateResult(fixture: Fixture) {
     const index = _.findIndex(this.fixtures, x => x.teamA === fixture.teamA && x.teamB === fixture.teamB);
-    const newFixtures = this.fixtures.splice(index, 1, fixture);
-    console.log(newFixtures);
+    const newFixtures = ArrayUtils.replaceAt(this.fixtures, index, fixture);
     this.updateFixtures(newFixtures);
   }
 
   private loadFixtures() {
     return this.s3.downloadFile('fixtures.json')
-      .map(response => JSON.parse(response));
+      .map(response => JSON.parse(response))
+      .map(jsonFixtures => jsonFixtures.map(jsonFixture => Fixture.fromJson(jsonFixture)));
   }
 }

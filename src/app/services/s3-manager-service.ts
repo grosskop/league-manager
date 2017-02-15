@@ -45,7 +45,7 @@ export class S3ManagerService {
                         observer.error('There was an error downloading your file: ' + error.message);
                     } else {
                         console.log('Successfully downloaded file ' + filename);
-                        console.log(data);
+                        console.log(data.toString());
                         observer.next(data.Body.toString());
                         observer.complete();
                     }
