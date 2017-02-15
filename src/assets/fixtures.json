@@ -718,7 +718,11 @@
   },
   {
     "teamA": "Marcus",
-    "teamB": "Tjark"
+    "teamB": "Tjark",
+    "goalsA": 4,
+    "goalsB": 1,
+    "matchNumber": 158,
+    "dateEntered": "2017-02-08T12:00:41.188Z"
   },
   {
     "teamA": "Marcus",
