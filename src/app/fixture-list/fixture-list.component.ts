@@ -1,9 +1,9 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {Fixture} from '../fixture';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Fixture } from '../fixture';
 
-import {TableCalculatorService} from '../table-calculator.service';
-import {FixtureService} from '../fixture.service';
-import {FixtureResult} from '../fixture-result';
+import { TableCalculatorService } from '../table-calculator.service';
+import { FixtureService } from '../fixture.service';
+import { FixtureResult } from '../fixture-result';
 
 @Component({
   selector: 'lm-fixture-list',
@@ -12,59 +12,20 @@ import {FixtureResult} from '../fixture-result';
 })
 export class FixtureListComponent implements OnInit {
 
-  private _searchTerm: string;
+  @Input() public fixtures: Fixture[];
+  @Input() public searchTerm: string = null;
+  @Output() public fixtureChanged = new EventEmitter<Fixture>();
 
-  fixtures: Fixture[] = [];
-
-  filteredFixtures: Fixture[];
-
-  constructor(private tableCalculator: TableCalculatorService, private fixtureLoader: FixtureService) {
+  constructor() {
   }
 
-  ngOnInit() {
-    this.fixtureLoader.fixtures$.subscribe(fixtures => {
-      this.fixtures = this.filteredFixtures = fixtures;
-      this.filterFixtures(null);
-      this.sortFixtures();
-    });
-  }
-
-  @Input() set searchTerm(searchTerm: string) {
-    this._searchTerm = searchTerm;
-    this.filterFixtures(searchTerm);
-    this.sortFixtures();
-  }
-
-  filterFixtures(term: string) {
-    if (term === null) {
-      this.filteredFixtures = this.fixtures;
-    } else {
-      this.filteredFixtures = this.fixtures.filter(fix => fix.teamA === term || fix.teamB === term);
-    }
-    this.filteredFixtures = this.filteredFixtures.filter(fix => fix.isComplete());
-  }
-
-  sortFixtures() {
-    this.filteredFixtures = this.filteredFixtures.sort((a, b) => {
-      if (a.matchNumber > b.matchNumber) {
-        return -1;
-      }
-      if (b.matchNumber > a.matchNumber) {
-        return 1;
-      }
-      return 0;
-    });
-  }
+  ngOnInit() {}
 
   public isResult(fixture, result: string) {
-    if (!this._searchTerm || !fixture.isComplete()) {
+    if (!this.searchTerm || !fixture.isComplete()) {
       return false;
     }
-    let actualResult = fixture.getResult(this._searchTerm);
+    let actualResult = fixture.getResult(this.searchTerm);
     return actualResult === FixtureResult[result];
-  }
-
-  onFixtureChange(fixture: Fixture) {
-    this.fixtureLoader.updateResult(fixture);
   }
 }

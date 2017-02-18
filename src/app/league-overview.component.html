@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row">
     <div class="standing col-xs-12 col-sm-6 col-md-6">
-      <lm-table [searchTerm]="searchTerm" (selectedPlayerChanged)="searchTerm = $event"></lm-table>
+      <lm-table [searchTerm]="searchTerm$ | async" (selectedPlayerChanged)="searchTerm$.next($event)"></lm-table>
     </div>
     <div class="fixtures col-xs-12 col-sm-6 col-md-3">
-      <lm-fixture-list [searchTerm]="searchTerm"></lm-fixture-list>
+      <lm-fixture-list [fixtures]="latestFixtures$ | async" [searchTerm]="searchTerm$ | async" (fixtureChanged)="onFixtureChange($event)"></lm-fixture-list>
     </div>
     <div class="fixtures col-xs-12 col-sm-12  col-md-3">
-      <lm-upcoming-matches [searchTerm]="searchTerm"></lm-upcoming-matches>
+      <lm-upcoming-matches [fixtures]="upcomingfixtures$ | async" [searchTerm]="searchTerm$ | async" (fixtureChanged)="onFixtureChange($event)"></lm-upcoming-matches>
     </div>
   </div>
 </div>

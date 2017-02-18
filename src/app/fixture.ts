@@ -10,6 +10,9 @@ export class Fixture {
   private _dateEntered: Date;
 
   public static fromJson(json) {
+    if (json.matchNumber && !json.dateEntered) {
+      json.dateEntered = new Date(json.matchNumber);
+    }
     return new Fixture(json.teamA, json.teamB,
       json.goalsA == null ? null : Number(json.goalsA),
       json.goalsB == null ? null : Number(json.goalsB),
@@ -63,7 +66,7 @@ export class Fixture {
   }
 
   public set goalsA(value: number) {
-    this._goalsA = value;
+    this._goalsA = Number(value);
     this.finalizeMatch();
   }
   public get goalsA() {
@@ -71,7 +74,7 @@ export class Fixture {
   }
 
   public set goalsB(value: number) {
-    this._goalsB = value;
+    this._goalsB = Number(value);
     this.finalizeMatch();
   }
   public get goalsB() {
@@ -89,6 +92,7 @@ export class Fixture {
   }
 
   public finalizeMatch() {
+    console.log(this.goalsA, typeof (this.goalsA), Number.isInteger(this.goalsA));
     if (this.isComplete()) {
       this._dateEntered = new Date();
     } else {

@@ -25,7 +25,7 @@ export class FixtureGeneratorService {
       for (let name1 of sortedNames) {
         for (let name2 of sortedNames.slice().reverse()) {
           if (name1 !== name2) {
-            newFixtures.push(new Fixture(name1, name2));
+            // newFixtures.push(new Fixture(name1, name2));
           }
         }
       }
