@@ -33,7 +33,8 @@
     "jsbn": "0.1.0",
     "moment": "2.17.1",
     "amazon-cognito-js": "1.1.0",
-    "xmlbuilder": "8.2.2"
+    "xmlbuilder": "8.2.2",
+    "jwt-decode": "2.1.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.4.5",

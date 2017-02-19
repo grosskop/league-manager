@@ -1,4 +1,4 @@
-import { LeagueOverviewComponent } from './league-overview.component';
+import { LeagueOverviewComponent } from './components/league-overview/league-overview.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 

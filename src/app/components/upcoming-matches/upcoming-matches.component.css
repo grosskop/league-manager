@@ -1,0 +1,16 @@
+td, th {
+  white-space: nowrap;
+}
+
+tr {
+  border: none;
+  }
+
+input {
+  width: 30px;
+  text-align: center;
+}
+
+input:read-only {
+  border: 1px solid #CCC;
+}
