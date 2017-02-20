@@ -1,11 +1,15 @@
-import { Observable } from 'rxjs/Rx';
+import { LeagueUser } from './league-user';
+import { BehaviorSubject, Observable } from 'rxjs/Rx';
 import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
+import * as _ from 'lodash';
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable()
 export class AuthService {
 
   private userPool: any;
+  public user$ = new BehaviorSubject<LeagueUser>(null);
 
   constructor() {
     AWSCognito.config.region = environment.region;
@@ -35,7 +39,6 @@ export class AuthService {
           console.log('session validity: ' + session.isValid());
 
           const poolUrl = `cognito-idp.${environment.region}.amazonaws.com/${environment.userpoolId}`;
-          console.log(poolUrl);
           const logins = {};
           logins[poolUrl] = session.getIdToken().getJwtToken();
 
@@ -95,7 +98,14 @@ export class AuthService {
   }
 
   isUserAdmin() {
-    return this.getUserName() === 'dominik';
+    const session = this.getUser() && this.getUser().getSignInUserSession();
+    if (session == null) {
+      return false;
+    }
+    const idToken = session.getIdToken().getJwtToken();
+    const payload = jwt_decode(idToken);
+    console.log(JSON.stringify(payload));
+    return payload['cognito:groups'];
   }
 
   logOut() {

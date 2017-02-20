@@ -1,0 +1,18 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th colspan="5">Upcoming Matches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fixture of fixtures">
+      <td class="text-right">{{fixture.teamA}}</td>
+      <td class="text-center">-</td>
+      <td>{{fixture.teamB}}</td>
+      <td>
+        <input [(ngModel)]="fixture.goalsA" (ngModelChange)="fixtureChanged.emit(fixture)" [readonly]="!isAdmin" /> : <input [(ngModel)]="fixture.goalsB"
+          (ngModelChange)="fixtureChanged.emit(fixture)" [readonly]="!isAdmin" />
+      </td>
+    </tr>
+  </tbody>
+</table>

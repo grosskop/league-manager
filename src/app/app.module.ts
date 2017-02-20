@@ -5,7 +5,7 @@ import { SharedModule } from './shared/shared.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
-import { LeagueOverviewComponent } from './league-overview.component';
+import { LeagueOverviewComponent } from './components/league-overview/league-overview.component';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -14,7 +14,7 @@ import { TableComponent } from './table/table.component';
 import { TableCalculatorService } from './table-calculator.service';
 import { FixtureGeneratorService } from './fixture-generator.service';
 import { FixtureService } from './fixture.service';
-import { UpcomingMatchesComponent } from './upcoming-matches/upcoming-matches.component';
+import { UpcomingMatchesComponent } from './components/upcoming-matches/upcoming-matches.component';
 
 @NgModule({
   declarations: [
