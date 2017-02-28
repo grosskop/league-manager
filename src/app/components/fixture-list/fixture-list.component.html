@@ -1,0 +1,24 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th colspan="5">{{title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fixture of fixtures"
+    [class.win]="isResult(fixture, 'Win')"
+    [class.draw]="isResult(fixture, 'Draw')"
+    [class.loss]="isResult(fixture, 'Loss')"
+      title="Match entered on {{ fixture.dateEntered }}">
+      <td class="text-right">{{fixture.teamA}}</td>
+      <td class="text-center">-</td>
+      <td>{{fixture.teamB}}</td>
+      <td>
+        <input [(ngModel)]="fixture.goalsA" (ngModelChange)="fixtureChanged.emit(fixture)" [readonly]="!(isAdmin$ | async)" /> : <input
+          [(ngModel)]="fixture.goalsB" (ngModelChange)="fixtureChanged.emit(fixture)" [readonly]="!(isAdmin$ | async)" />
+      </td>
+      <td><i *ngIf="searchTerm" class="fa fa-futbol-o"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

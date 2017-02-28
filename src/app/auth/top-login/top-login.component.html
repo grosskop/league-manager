@@ -1,16 +1,17 @@
 <div class="toplogin">
   <form role="form" #loginForm="ngForm">
-    <div *ngIf="loginVisible" class="loginForm animated bounceInDown">
+    <div *ngIf="(loginVisible$ | async)" class="loginForm animated bounceInDown">
       <input type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="Username">
       <input type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Password">
     </div>
-    <button class="user" [class.spinner]="!loginVisible" (click)="userClicked()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-      <i class="fa fa-user-circle" *ngIf="!loggedIn && !loginVisible"></i>
-      <i class="fa fa-arrow-right animated" [class.bounceOutRight]="loggingIn" *ngIf="!loggedIn && loginVisible && !loginFailed"></i>
+    <button class="user" [class.spinner]="!(loginVisible$ | async)" (click)="buttonClicked$.next($event)" (mouseenter)="hovering$.next(true)"
+      (mouseleave)="hovering$.next(false)">
+      <i class="fa fa-user-circle" *ngIf="!loggedIn && !(loginVisible$ | async)"></i>
+      <i class="fa fa-arrow-right animated" [class.bounceOutRight]="loggingIn" *ngIf="!loggedIn && (loginVisible$ | async) && !loginFailed"></i>
       <i class="fa fa-times" *ngIf="loginFailed"></i>
       <i class="fa fa-user animated bounceInUp" *ngIf="loggedIn "></i>
       <br />
-      {{buttonText}}
+      {{buttonText$ | async}}
     </button>
   </form>
 </div>

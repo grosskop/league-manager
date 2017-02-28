@@ -1,5 +1,5 @@
-import { FixtureService } from '../../fixture.service';
-import { Fixture } from '../../fixture';
+import { FixtureService } from '../../services/fixture.service';
+import { Fixture } from '../../models/fixture';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';

@@ -1,9 +1,8 @@
+import { Observable } from 'rxjs/Rx';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Fixture } from '../fixture';
-
-import { TableCalculatorService } from '../table-calculator.service';
-import { FixtureService } from '../fixture.service';
-import { FixtureResult } from '../fixture-result';
+import { Fixture } from '../../models/fixture';
+import { FixtureResult } from '../../models/fixture-result';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'lm-fixture-list',
@@ -14,12 +13,17 @@ export class FixtureListComponent implements OnInit {
 
   @Input() public fixtures: Fixture[];
   @Input() public searchTerm: string = null;
+  @Input() public title: string;
   @Output() public fixtureChanged = new EventEmitter<Fixture>();
 
-  constructor() {
+  public isAdmin$: Observable<boolean>;
+
+  constructor(private authService: AuthService) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isAdmin$ = this.authService.user$.map(user => user == null ? false : user.isAdmin);
+  }
 
   public isResult(fixture, result: string) {
     if (!this.searchTerm || !fixture.isComplete()) {

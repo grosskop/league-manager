@@ -1,6 +1,6 @@
 import { FixtureResult } from './fixture-result';
-export class Fixture {
 
+export class Fixture {
   private _goalsA: number;
   private _goalsB: number;
   private _teamA: string;

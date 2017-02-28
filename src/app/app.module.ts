@@ -1,27 +1,24 @@
-import { AuthService } from './auth/auth.service';
-import { S3ManagerService } from './services/s3-manager-service';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
-import { LeagueOverviewComponent } from './components/league-overview/league-overview.component';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { FixtureListComponent } from './fixture-list/fixture-list.component';
-import { TableComponent } from './table/table.component';
-import { TableCalculatorService } from './table-calculator.service';
-import { FixtureGeneratorService } from './fixture-generator.service';
-import { FixtureService } from './fixture.service';
-import { UpcomingMatchesComponent } from './components/upcoming-matches/upcoming-matches.component';
+import { AppComponent } from './components/app/app.component';
+import { FixtureListComponent } from './components/fixture-list/fixture-list.component';
+import { TableComponent } from './components/table/table.component';
+import { LeagueOverviewComponent } from './components/league-overview/league-overview.component';
+import { TableCalculatorService } from './services/table-calculator.service';
+import { FixtureGeneratorService } from './services/fixture-generator.service';
+import { FixtureService } from './services/fixture.service';
+import { S3ManagerService } from './services/s3-manager-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     FixtureListComponent,
     TableComponent,
-    UpcomingMatchesComponent,
     LeagueOverviewComponent
   ],
   imports: [
@@ -41,7 +38,8 @@ import { UpcomingMatchesComponent } from './components/upcoming-matches/upcoming
       multi: true
     },
     {
-      provide: APP_BASE_HREF, useValue : environment.baseUrl }
+      provide: APP_BASE_HREF, useValue: environment.baseUrl
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,9 @@
-import { ArrayUtils } from './utils/ArrayUtils';
-import { S3ManagerService } from './services/s3-manager-service';
+import { ArrayUtils } from '../utils/ArrayUtils';
+import { S3ManagerService } from './s3-manager-service';
 import { ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Fixture } from './fixture';
+import { Fixture } from '../models/fixture';
 import * as _ from 'lodash';
 
 @Injectable()
@@ -43,7 +43,7 @@ export class FixtureService {
 
   private loadFixtures() {
     return this.s3.downloadFile('fixtures.json')
-      .map(response => JSON.parse(response))
+      .map(response => JSON.parse(response as string))
       .map(jsonFixtures => jsonFixtures.map(jsonFixture => Fixture.fromJson(jsonFixture)));
   }
 }

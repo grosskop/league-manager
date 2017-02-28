@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Fixture } from './fixture';
+import { Fixture } from '../models/fixture';
 import { Http } from '@angular/http';
 import { Subject } from 'rxjs';
 

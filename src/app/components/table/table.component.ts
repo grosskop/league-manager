@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { TableCalculatorService } from '../table-calculator.service';
-import { TableEntry } from '../table-entry';
+import { TableCalculatorService } from '../../services/table-calculator.service';
+import { TableEntry } from '../../models/table-entry';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ export class TableComponent implements OnInit, OnDestroy {
   private sortedTableEntries: TableEntry[];
   private selectedPlayer: string;
   private sortCriteria: string;
-  private sortAscending: boolean = true;
+  private sortAscending = true;
   private subscription: Subscription;
 
   @Input() searchTerm: string;
