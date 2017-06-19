@@ -22,6 +22,10 @@ export class AuthService {
     this.updateAwsCredentials();
   }
 
+  public isLoggedIn() {
+    return this.user$.map(user => user != null);
+  }
+
   updateAwsCredentials() {
     const cognitoUser = this.getUser();
     if (cognitoUser == null) {

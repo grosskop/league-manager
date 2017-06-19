@@ -36,16 +36,13 @@ export class TopLoginComponent implements OnInit {
       this.buttonClicked$.combineLatest(this.authService.user$, (a, b) => b)
         .map(user => user == null);
     this.buttonClicked$
-      .combineLatest(this.loginVisible$.filter(visible => visible))
+      .switchMap(() => this.authService.isLoggedIn())
+      .filter(loggedIn => !loggedIn)
       .subscribe(
       () => {
         this.authService.logIn(this.username, this.password).subscribe(
           () => {
             console.log('login succeeded!');
-            // this.loginVisible = false;
-            this.loggedIn = true;
-            // this.buttonText = this.username;
-            this.loggingIn = false;
           },
           err => {
             console.error(err);
@@ -55,7 +52,20 @@ export class TopLoginComponent implements OnInit {
           }
         );
       },
-      err => console.error(err));
+      err => console.error(err)
+      );
+
+    this.buttonClicked$
+      .switchMap(() => this.authService.isLoggedIn())
+      .do(x => console.log(x))
+      .filter(loggedIn => loggedIn)
+      .subscribe(
+      () => {
+        console.log('yarp');
+        this.authService.logOut();
+      },
+      err => console.error(err)
+      );
   }
 
   getButtonText() {
